@@ -795,6 +795,16 @@ class ImageBodyModelEstimator(BodyModelEstimator):
         all_preds['image_idx'] = kwargs['sample_idx']
         return all_preds
 
+    def forward_dummy(self, img):
+        """Used for computing network flops.
+
+        See `tools/get_flops.py`
+        """
+        # backbone
+        x = self.backbone(img)
+        predictions = self.head(x)
+        return predictions
+
 
 class VideoBodyModelEstimator(BodyModelEstimator):
 
