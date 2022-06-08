@@ -1,91 +1,49 @@
-<br/>
-
-<div align="center">
-    <img src="resources/mmhuman3d-logo.png" width="600"/>
-</div>
-
-<br/>
-
 <div align="center">
 
-[![Documentation](https://readthedocs.org/projects/mmhuman3d/badge/?version=latest)](https://mmhuman3d.readthedocs.io/en/latest/?badge=latest)
-[![actions](https://github.com/open-mmlab/mmhuman3d/workflows/build/badge.svg)](https://github.com/open-mmlab/mmhuman3d/actions)
-[![codecov](https://codecov.io/gh/open-mmlab/mmhuman3d/branch/main/graph/badge.svg)](https://codecov.io/gh/open-mmlab/mmhuman3d)
-[![PyPI](https://img.shields.io/pypi/v/mmhuman3d)](https://pypi.org/project/mmhuman3d/)
-[![LICENSE](https://img.shields.io/github/license/open-mmlab/mmhuman3d.svg)](https://github.com/open-mmlab/mmhuman3d/blob/main/LICENSE)
-[![Percentage of issues still open](https://isitmaintained.com/badge/open/open-mmlab/mmhuman3d.svg)](https://github.com/open-mmlab/mmhuman3d/issues)
+# Benchmarking 3D Pose and Shape Estimation Beyond Algorithms
+
+
+### [Installation](#installation) | [Train](#train) | [Evaluation](#evaluation) | [Augmentation](#augmentation) | [FLOPs](#flops) | [Backbones](#backbones)
 
 </div>
 
 ## Introduction
 
-English | [简体中文](README_CN.md)
+This repository builds upon [MMHuman3D](https://openmmlab.com/mmhuman3d), an open source PyTorch-based codebase for the use of 3D human parametric models in computer vision and computer graphics. MMHuman3D is a part of the [OpenMMLab](https://openmmlab.com/) project.
 
-MMHuman3D is an open source PyTorch-based codebase for the use of 3D human parametric models in computer vision and computer graphics. It is a part of the [OpenMMLab](https://openmmlab.com/) project.
+These features will be contributed to MMHuman3D at a later date.
 
 The main branch works with **PyTorch 1.7+**.
+<!--
+https://user-images.githubusercontent.com/62529255/144362861-e794b404-c48f-4ebe-b4de-b91c3fbbaa3b.mp4 -->
 
-https://user-images.githubusercontent.com/62529255/144362861-e794b404-c48f-4ebe-b4de-b91c3fbbaa3b.mp4
+### Major Features added onto MMHuman3D
 
-### Major Features
 
-- **Reproducing popular methods with a modular framework**
+- **Provide annotation files**
 
-  MMHuman3D reimplements popular methods, allowing users to reproduce SOTAs with one line of code. The modular framework is convenient for rapid prototyping: the users may attempt various hyperparameter settings and even network architectures, without actually modifying the code.
+  Will add links to Gdrive. Future works can use these files to train on any of the 31 dataset.
 
-- **Supporting various datasets with a unified data convention**
+- **Provide config files for 31 single and multi-dataset benchmarks**
 
-  With the help of a convention toolbox, a unified data format *HumanData* is used to align all supported datasets. Preprocessed data files are also available.
+  Future works can use these configs for training and obtain benchmarks on HMR for baseline comparison on their selected dataset mixes and partition.
 
-- **Versatile visualization toolbox**
+- **Evaluation for different benchmarks**
 
-  A suite of differentiale visualization tools for human parametric model rendering (including part segmentation, depth map and point clouds) and conventional 2D/3D keypoints are available.
+  Easily obtain benchmarks on their trained model on five test sets (1) 3DPW-test (2) H36M (P1/ P2) test (3) EFT-OCHuman-test (4)  EFT-COCO-Val (5) EFT-LSPET-test
 
-## News
-- 2022-05-31: MMHuman3D [v0.8.0](https://github.com/open-mmlab/mmhuman3d/releases/tag/v0.8.0) is released. Major updates include:
-  - Support SmoothNet (added by paper authors)
-  - Fix circular import and up to 2.5x speed up in module initialization
-  - Add documentations in Chinese
-- 2022-04-30: MMHuman3D [v0.7.0](https://github.com/open-mmlab/mmhuman3d/releases/tag/v0.7.0) is released. Major updates include:
-  - Support PARE (better than the official implementation)
-  - Support DeciWatch (added by paper authors)
-  - Add GTA-Human HMR baseline (official release)
-  - Support saving inference results
-- 2022-04-01: MMHuman3D [v0.6.0](https://github.com/open-mmlab/mmhuman3d/releases/tag/v0.6.0) is released. Major updates include:
-  - Add HumanDataCache that requires 96% less RAM during training
-  - Refactor differentiable renderers and support UV map rendering
-  - Support slice/concat operations for HumanData
+- **Add 9 augmentation techniques**
 
-## Benchmark and Model Zoo
+  Train with a suite of augmentation techniques for a more robust model
 
-More details can be found in [model_zoo.md](docs/model_zoo.md).
+- **FLOPs and Param evaluation for trained model**
 
-Supported body models:
+  Evaluate flops and params for trained model
 
-<details open>
-<summary>(click to collapse)</summary>
+- **Provide training log and model pths for inference**
 
-- [x] [SMPL](https://smpl.is.tue.mpg.de/) (SIGGRAPH Asia'2015)
-- [x] [SMPL-X](https://smpl-x.is.tue.mpg.de/) (CVPR'2019)
+  Will add links to Gdrive
 
-</details>
-
-Supported methods:
-
-<details open>
-<summary>(click to collapse)</summary>
-
-- [x] [SMPLify](https://smplify.is.tue.mpg.de/) (ECCV'2016)
-- [x] [SMPLify-X](https://smpl-x.is.tue.mpg.de/) (CVPR'2019)
-- [x] [HMR](https://akanazawa.github.io/hmr/) (CVPR'2018)
-- [x] [SPIN](https://www.seas.upenn.edu/~nkolot/projects/spin/) (ICCV'2019)
-- [x] [VIBE](https://github.com/mkocabas/VIBE) (CVPR'2020)
-- [x] [HybrIK](https://jeffli.site/HybrIK/) (CVPR'2021)
-- [x] [PARE](https://pare.is.tue.mpg.de/) (ICCV'2021)
-- [x] [DeciWatch](https://ailingzeng.site/deciwatch) (arXiv'2022)
-- [x] [SmoothNet](https://ailingzeng.site/smoothnet) (arXiv'2022)
-
-</details>
 
 Supported datasets:
 
@@ -110,60 +68,144 @@ Supported datasets:
 - [x] [SURREAL](https://www.di.ens.fr/willow/research/surreal/data/) (CVPR'2017)
 - [x] [UP3D](https://files.is.tuebingen.mpg.de/classner/up/) (CVPR'2017)
 
-</details>
 
-We will keep up with the latest progress of the community, and support more popular methods and frameworks.
+Supported backbones:
 
-If you have any feature requests, please feel free to leave a comment in the [wishlist](https://github.com/open-mmlab/mmhuman3d/discussions/47).
+<details open>
+<summary>(click to collapse)</summary>
 
-## Get Started
+- [x] ResNet (CVPR'2016)
+- [x] ResNeXt (CVPR'2017)
+- [x] HRNet (CVPR'2019)
+- [x] EfficientNet
+- [x] ViT
+- [x] Swin
+- [x] Twins
 
-Please see [getting_started.md](docs/getting_started.md) for the basic usage of MMHuman3D.
+## Installation
 
-## License
+General set-up instructions follow that of [MMHuman3d](https://openmmlab.com/mmhuman3d). Please refer to [install.md](./install.md) for installation.
 
-This project is released under the [Apache 2.0 license](LICENSE). Some supported methods may carry [additional licenses](docs/additional_licenses.md).
+## Data Preparation
 
-## Citation
+Please refer to [data_preparation.md](./preprocess_dataset.md) for data preparation.
 
-If you find this project useful in your research, please consider cite:
+## Body Model Preparation
 
-```bibtex
-@misc{mmhuman3d,
-    title={OpenMMLab 3D Human Parametric Model Toolbox and Benchmark},
-    author={MMHuman3D Contributors},
-    howpublished = {\url{https://github.com/open-mmlab/mmhuman3d}},
-    year={2021}
-}
+- [SMPL](https://smpl.is.tue.mpg.de/) v1.0 is used in our experiments.
+  - Neutral model can be downloaded from [SMPLify](https://smplify.is.tue.mpg.de/).
+  - All body models have to be renamed in `SMPL_{GENDER}.pkl` format. <br/>
+    For example, `mv basicModel_neutral_lbs_10_207_0_v1.0.0.pkl SMPL_NEUTRAL.pkl`
+- [J_regressor_extra.npy](https://openmmlab-share.oss-cn-hangzhou.aliyuncs.com/mmhuman3d/models/J_regressor_extra.npy?versionId=CAEQHhiBgIDD6c3V6xciIGIwZDEzYWI5NTBlOTRkODU4OTE1M2Y4YTI0NTVlZGM1)
+- [J_regressor_h36m.npy](https://openmmlab-share.oss-cn-hangzhou.aliyuncs.com/mmhuman3d/models/J_regressor_h36m.npy?versionId=CAEQHhiBgIDE6c3V6xciIDdjYzE3MzQ4MmU4MzQyNmRiZDA5YTg2YTI5YWFkNjRi)
+- [smpl_mean_params.npz](https://openmmlab-share.oss-cn-hangzhou.aliyuncs.com/mmhuman3d/models/smpl_mean_params.npz?versionId=CAEQHhiBgICN6M3V6xciIDU1MzUzNjZjZGNiOTQ3OWJiZTJmNThiZmY4NmMxMTM4)
+
+Download the above resources and arrange them in the following file structure:
+
+```text
+mmhuman3d
+├── mmhuman3d
+├── docs
+├── tests
+├── tools
+├── configs
+└── data
+    └── body_models
+        ├── J_regressor_extra.npy
+        ├── J_regressor_h36m.npy
+        ├── smpl_mean_params.npz
+        └── smpl
+            ├── SMPL_FEMALE.pkl
+            ├── SMPL_MALE.pkl
+            └── SMPL_NEUTRAL.pkl
 ```
 
-## Contributing
+## Train
 
-We appreciate all contributions to improve MMHuman3D. Please refer to [CONTRIBUTING.md](.github/CONTRIBUTING.md) for the contributing guideline.
+### Training with a single / multiple GPUs
 
-## Acknowledgement
+```shell
+python tools/train.py ${CONFIG_FILE} ${WORK_DIR} --no-validate
+```
+Example: using 1 GPU to train HMR.
+```shell
+python tools/train.py ${CONFIG_FILE} ${WORK_DIR} --gpus 1 --no-validate
+```
 
-MMHuman3D is an open source project that is contributed by researchers and engineers from both the academia and the industry.
-We appreciate all the contributors who implement their methods or add new features, as well as users who give valuable feedbacks.
-We wish that the toolbox and benchmark could serve the growing research community by providing a flexible toolkit to reimplement existing methods and develop their own new models.
+### Training with Slurm
 
-## Projects in OpenMMLab
+If you can run MMHuman3D on a cluster managed with [slurm](https://slurm.schedmd.com/), you can use the script `slurm_train.sh`.
 
-- [MMCV](https://github.com/open-mmlab/mmcv): OpenMMLab foundational library for computer vision.
-- [MIM](https://github.com/open-mmlab/mim): MIM Installs OpenMMLab Packages.
-- [MMClassification](https://github.com/open-mmlab/mmclassification): OpenMMLab image classification toolbox and benchmark.
-- [MMDetection](https://github.com/open-mmlab/mmdetection): OpenMMLab detection toolbox and benchmark.
-- [MMDetection3D](https://github.com/open-mmlab/mmdetection3d): OpenMMLab next-generation platform for general 3D object detection.
-- [MMSegmentation](https://github.com/open-mmlab/mmsegmentation): OpenMMLab semantic segmentation toolbox and benchmark.
-- [MMAction2](https://github.com/open-mmlab/mmaction2): OpenMMLab next-generation action understanding toolbox and benchmark.
-- [MMTracking](https://github.com/open-mmlab/mmtracking): OpenMMLab video perception toolbox and benchmark.
-- [MMPose](https://github.com/open-mmlab/mmpose): OpenMMLab pose estimation toolbox and benchmark.
-- [MMEditing](https://github.com/open-mmlab/mmediting): OpenMMLab image and video editing toolbox.
-- [MMOCR](https://github.com/open-mmlab/mmocr): A Comprehensive Toolbox for Text Detection, Recognition and Understanding.
-- [MMGeneration](https://github.com/open-mmlab/mmgeneration): OpenMMLab next-generation toolbox for generative models.
-- [MMFlow](https://github.com/open-mmlab/mmflow): OpenMMLab optical flow toolbox and benchmark.
-- [MMFewShot](https://github.com/open-mmlab/mmfewshot): OpenMMLab FewShot Learning Toolbox and Benchmark.
-- [MMHuman3D](https://github.com/open-mmlab/mmhuman3d): OpenMMLab 3D Human Parametric Model Toolbox and Benchmark.
-- [MMSelfSup](https://github.com/open-mmlab/mmselfsup): OpenMMLab self-supervised learning toolbox and benchmark.
-- [MMRazor](https://github.com/open-mmlab/mmrazor): OpenMMLab model compression toolbox and benchmark.
-- [MMDeploy](https://github.com/open-mmlab/mmdeploy): OpenMMLab model deployment framework.
+```shell
+./tools/slurm_train.sh ${PARTITION} ${JOB_NAME} ${CONFIG_FILE} ${WORK_DIR} ${GPU_NUM} --no-validate
+```
+
+Common optional arguments include:
+- `--resume-from ${CHECKPOINT_FILE}`: Resume from a previous checkpoint file.
+- `--no-validate`: Whether not to evaluate the checkpoint during training.
+
+Example: using 8 GPUs to train HMR on a slurm cluster.
+```shell
+./tools/slurm_train.sh my_partition my_job configs/hmr/resnet50_hmr_pw3d.py work_dirs/hmr 8 --no-validate
+```
+
+You can check [slurm_train.sh](https://github.com/open-mmlab/mmhuman3d/tree/main/tools/slurm_train.sh) for full arguments and environment variables.
+
+
+## Evaluation
+
+There's five benchmarks for evaluation:
+- 3DPW-test (P2)
+- H36m-test (P2)
+- EFT-COCO-val
+- EFT-LSPET-test
+- EFT-OCHuman-test
+
+### Evaluate with a single GPU / multiple GPUs
+
+```shell
+python tools/test.py ${CONFIG} --work-dir=${WORK_DIR} ${CHECKPOINT} --metrics=${METRICS}
+```
+Example:
+```shell
+python tools/test.py configs/hmr/resnet50_hmr_pw3d.py --work-dir=work_dirs/hmr work_dirs/hmr/latest.pth --metrics pa-mpjpe mpjpe
+```
+
+### Evaluate with slurm
+
+If you can run MMHuman3D on a cluster managed with [slurm](https://slurm.schedmd.com/), you can use the script `slurm_test.sh`.
+
+```shell
+./tools/slurm_test.sh ${PARTITION} ${JOB_NAME} ${CONFIG} ${WORK_DIR} ${CHECKPOINT} --metrics ${METRICS}
+```
+Example:
+```shell
+./tools/slurm_test.sh my_partition test_hmr configs/hmr/resnet50_hmr_pw3d.py work_dirs/hmr work_dirs/hmr/latest.pth 8 --metrics pa-mpjpe mpjpe
+```
+
+
+## FLOPs Calculation
+
+`tools/get_flops.py` is a script adapted from [flops-counter.pytorch](https://github.com/sovrasov/flops-counter.pytorch) and [MMDetection](https://github.com/open-mmlab/mmdetection) to compute the FLOPs and params of a given model.
+
+```shell
+python tools/get_flops.py ${CONFIG_FILE} [--shape ${INPUT_SHAPE}]
+```
+
+You will get the results like this.
+
+```text
+==============================
+Input shape: (3, 1280, 800)
+Flops: 239.32 GFLOPs
+Params: 37.74 M
+==============================
+```
+
+**Note**: This tool is still experimental and we do not guarantee that the
+ number is absolutely correct. You may well use the result for simple
+  comparisons, but double check it before you adopt it in technical reports or papers.
+
+1. FLOPs are related to the input shape while parameters are not. The default
+ input shape is (1, 3, 224, 224).
+2. Some operators are not counted into FLOPs like GN and custom operators. Refer to [`mmcv.cnn.get_model_complexity_info()`](https://github.com/open-mmlab/mmcv/blob/master/mmcv/cnn/utils/flops_counter.py) for details.
