@@ -24,17 +24,29 @@ class EftConverter(BaseModeConverter):
         modes (list): 'coco_all', 'coco_part', 'mpii' and/or 'lspet' for
         accepted modes
     """
-    ACCEPTED_MODES = ['coco_all', 'coco_part', 'mpii', 'lspet']
+    ACCEPTED_MODES = [
+        'coco_train', 'coco_part_train', 'lspet_train', 'lspet_test',
+        'mpii_train', 'coco_val', 'posetrack_train', 'ochuman_test',
+        'ochuman_train'
+    ]
 
     def __init__(self, modes: List = []) -> None:
         super(EftConverter, self).__init__(modes)
         self.json_mapping_dict = {
-            'coco_all':
-            ['coco_2014_train_fit/COCO2014-All-ver01.json', 'train2014/'],
-            'coco_part':
-            ['coco_2014_train_fit/COCO2014-Part-ver01.json', 'train2014/'],
-            'lspet': ['LSPet_fit/LSPet_ver01.json', ''],
-            'mpii': ['MPII_fit/MPII_ver01.json', 'images/']
+            'coco_train':
+            ['coco_2014_train_fit/COCO2014-All-ver01.json', 'train2014'],
+            'coco_part_train':
+            ['coco_2014_train_fit/COCO2014-Part-ver01.json', 'train2014'],
+            'lspet_train':
+            'LSPet_train_ver10.json',
+            'lspet_test':
+            'LSPet_test_ver10.json',
+            'mpii_train': ['MPII_fit/MPII_ver01.json', 'images'],
+            'coco_val':
+            'COCO2014-Val-ver10.json',
+            'posetrack_train': ['PoseTrack_ver01.json', 'images/train'],
+            'ochuman_test': ['OCHuman_test_ver10.json', 'images'],
+            'ochuman_train': ['OCHuman_train_ver10.json', 'images']
         }
 
     @staticmethod
@@ -67,9 +79,13 @@ class EftConverter(BaseModeConverter):
         smpl['global_orient'] = []
 
         if mode in self.json_mapping_dict.keys():
-            annot_file = os.path.join(dataset_path,
-                                      self.json_mapping_dict[mode][0])
-            image_prefix = self.json_mapping_dict[mode][1]
+            metadata = self.json_mapping_dict[mode]
+            if isinstance(metadata, list):
+                annot_file = os.path.join(dataset_path, metadata[0])
+                store_header = True
+            elif isinstance(metadata, str):
+                annot_file = os.path.join(dataset_path, metadata)
+                store_header = False
         else:
             raise ValueError('provided dataset is not in eft fittings')
 
@@ -91,13 +107,15 @@ class EftConverter(BaseModeConverter):
             gt_keypoint_2d = data['gt_keypoint_2d']
 
             image_name = data['imageName']
+            if store_header:
+                image_name = f'{metadata[1]}/{image_name}'
 
             smpl['body_pose'].append(pose_rotmat[1:].reshape((23, 3)))
             smpl['global_orient'].append(pose_rotmat[0].reshape(-1, 3))
             smpl['betas'].append(beta)
 
             # store data
-            image_path_.append(image_prefix + image_name)
+            image_path_.append(image_name)
             bbox_xywh_.append(bbox_xywh)
             keypoints2d_.append(gt_keypoint_2d)
 
@@ -113,7 +131,7 @@ class EftConverter(BaseModeConverter):
         human_data['bbox_xywh'] = bbox_xywh_
         human_data['keypoints2d_mask'] = mask
         human_data['keypoints2d'] = keypoints2d_
-        human_data['smpl'] = smpl
+        # human_data['smpl'] = smpl
         human_data['config'] = 'eft'
         human_data.compress_keypoints_by_mask()
 
@@ -121,5 +139,5 @@ class EftConverter(BaseModeConverter):
         if not os.path.isdir(out_path):
             os.makedirs(out_path)
 
-        out_file = os.path.join(out_path, 'eft_{}.npz'.format(mode))
+        out_file = os.path.join(out_path, 'eft_{}_nosmpl.npz'.format(mode))
         human_data.dump(out_file)
