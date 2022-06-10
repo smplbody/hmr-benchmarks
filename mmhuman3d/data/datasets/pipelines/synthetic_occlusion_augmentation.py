@@ -140,6 +140,7 @@ class SyntheticOcclusion:
 @PIPELINES.register_module()
 class SyntheticOcclusionKp:
     """Data augmentation with synthetic occlusion.
+
     Required keys: 'img'
     Modifies key: 'img'
     Args:
@@ -166,10 +167,12 @@ class SyntheticOcclusionKp:
         keypoints2d = results['keypoints2d'].copy()
         scale = results['scale'][0]
 
-        img = occlude_with_pascal_objects_kp(img, keypoints2d, scale, self.occluders)
+        img = occlude_with_pascal_objects_kp(img, keypoints2d, scale,
+                                             self.occluders)
 
         results['img'] = img
         return results
+
 
 def occlude_with_pascal_objects_kp(im, keypoints2d, scale, occluders):
     """Returns an augmented version of `im`, containing some occluders from the
@@ -186,14 +189,15 @@ def occlude_with_pascal_objects_kp(im, keypoints2d, scale, occluders):
         occluder = random.choice(occluders)
 
         # choose random kpt
-        visible_kpts = keypoints2d[keypoints2d[..., -1]==1.]
-        x, y = visible_kpts[np.random.choice(range(len(visible_kpts)), 1)[0]][:2]
+        visible_kpts = keypoints2d[keypoints2d[..., -1] == 1.]
+        x, y = visible_kpts[np.random.choice(range(len(visible_kpts)),
+                                             1)[0]][:2]
 
         # shift center
         delta_x = (np.random.randn() * 0.1) * p_size
         delta_y = (np.random.randn() * 0.1) * p_size
-        x = int(np.clip(x+delta_x, 0, im_w))
-        y = int(np.clip(y+delta_y, 0, im_h))
+        x = int(np.clip(x + delta_x, 0, im_w))
+        y = int(np.clip(y + delta_y, 0, im_h))
         center = np.array([x, y])
 
         random_scale_factor = np.random.uniform(0.2, 1.0)
