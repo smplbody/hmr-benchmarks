@@ -22,7 +22,7 @@ HMR+ uses the same ResNet-50 backbone and training datasets as HMR and SPIN (wit
 <p>
     <img src="resources/dance3.gif" width="99%">
     <img src="resources/dance.gif" width="99%">
-    <img src="resources/dance001.gif" width="50%">
+    <img src="resources/dance001.gif" width="70%">
 </p>
 
 ### Major Features added onto MMHuman3D
