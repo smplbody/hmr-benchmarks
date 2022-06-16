@@ -21,6 +21,8 @@ https://user-images.githubusercontent.com/62529255/144362861-e794b404-c48f-4ebe-
 HMR+ uses the same ResNet-50 backbone and training datasets as HMR and SPIN (without fittings). We find that adopting our training tricks is sufficient to build a model that is comparable to the previous SOTA algorithms without using bigger model capacity or newer datasets. We also include HMR* uses Twins-SVT backbone and datasets following PARE.  See our [paper]() for more details.
 <p>
     <img src="resources/dance3.gif" width="99%">
+    <img src="resources/dance.gif" width="99%">
+    <img src="resources/dance001.gif" width="50%">
 </p>
 
 ### Major Features added onto MMHuman3D
