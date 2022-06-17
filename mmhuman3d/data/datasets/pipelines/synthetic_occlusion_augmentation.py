@@ -135,3 +135,75 @@ class SyntheticOcclusion:
 
         results['img'] = img
         return results
+
+
+@PIPELINES.register_module()
+class SyntheticOcclusionKp:
+    """Data augmentation with synthetic occlusion.
+
+    Required keys: 'img'
+    Modifies key: 'img'
+    Args:
+        flip_prob (float): probability of the image being flipped. Default: 0.5
+        flip_pairs (list[int]): list of left-right keypoint pairs for flipping
+        occ_aug_dataset (str): name of occlusion dataset. Default: pascal
+        pascal_voc_root_path (str): the path to pascal voc dataset,
+        which can generate occluders file.
+        occluders_file (str): occluders file.
+    """
+
+    def __init__(self, occluders_file='', occluders=None):
+        self.occluders = None
+        if occluders is not None:
+            self.occluders = occluders
+
+        else:
+            self.occluders = load_pascal_occluders(
+                occluders_file=occluders_file, )
+
+    def __call__(self, results):
+        """Perform data augmentation with random channel noise."""
+        img = results['img']
+        keypoints2d = results['keypoints2d'].copy()
+        scale = results['scale'][0]
+
+        img = occlude_with_pascal_objects_kp(img, keypoints2d, scale,
+                                             self.occluders)
+
+        results['img'] = img
+        return results
+
+
+def occlude_with_pascal_objects_kp(im, keypoints2d, scale, occluders):
+    """Returns an augmented version of `im`, containing some occluders from the
+    Pascal VOC dataset."""
+
+    result = im.copy()
+    im_w, im_h = im.shape[1], im.shape[0]
+    width_height = np.asarray([im.shape[1], im.shape[0]])
+    im_scale_factor = min(width_height) / 256
+    count = np.random.randint(1, 8)
+    p_size = scale
+
+    for _ in range(count):
+        occluder = random.choice(occluders)
+
+        # choose random kpt
+        visible_kpts = keypoints2d[keypoints2d[..., -1] == 1.]
+        x, y = visible_kpts[np.random.choice(range(len(visible_kpts)),
+                                             1)[0]][:2]
+
+        # shift center
+        delta_x = (np.random.randn() * 0.1) * p_size
+        delta_y = (np.random.randn() * 0.1) * p_size
+        x = int(np.clip(x + delta_x, 0, im_w))
+        y = int(np.clip(y + delta_y, 0, im_h))
+        center = np.array([x, y])
+
+        random_scale_factor = np.random.uniform(0.2, 1.0)
+        scale_factor = random_scale_factor * im_scale_factor + 1e-8
+        occluder = resize_by_factor(occluder, scale_factor)
+
+        paste_over(im_src=occluder, im_dst=result, center=center)
+
+    return result
