@@ -25,7 +25,7 @@ img_res = 224
 
 # model settings
 model = dict(
-    type='ImageBodyModelEstimator',v
+    type='ImageBodyModelEstimator',
     backbone=dict(
         type='SVT',
         arch='base',

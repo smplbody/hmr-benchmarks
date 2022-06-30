@@ -156,13 +156,6 @@ data = dict(
                     pipeline=train_pipeline,
                     convention='smpl_54',
                     ann_file='eft_mpii_train.npz'),
-                # dict(
-                #     type=dataset_type,
-                #     dataset_name='mpii',
-                #     data_prefix='data',
-                #     pipeline=train_pipeline,
-                #     convention='smpl_54',
-                #     ann_file='mpii_train.npz'),
                 dict(
                     type=dataset_type,
                     dataset_name='mpi_inf_3dhp',
@@ -171,7 +164,6 @@ data = dict(
                     convention='smpl_54',
                     ann_file='spin_mpi_inf_3dhp_train.npz'),
             ],
-            # partition=[0.35, 0.15, 0.1, 0.10, 0.10, 0.2],
             partition=[0.5, 0.233, 0.046, 0.021, 0.2],
         ),
         adv_dataset=dict(
