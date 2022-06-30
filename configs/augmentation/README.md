@@ -32,7 +32,7 @@ On H36M
 | [Soft erasing](resnet50_hmr_soft_erase_h36m.py) | 118.15 / 65.16 |
 | [Self-mixing](resnet50_hmr_self_mix_h36m.py) | 111.46 / 62.81 |
 | [Synthetic occlusion](resnet50_hmr_syn_occ_h36m.py) | 110.42 / 62.78 |
-| [Synthetic occlusion over keypoints](resnet50_hmr_syn_occkp_h36m.py) | 100.75 / 59.13 |
+| [Synthetic occlusion (kp)](resnet50_hmr_syn_occkp_h36m.py) | 100.75 / 59.13 |
 
 
 On EFT-COCO
@@ -48,4 +48,4 @@ On EFT-COCO
 | [Soft erasing](resnet50_hmr_soft_erase_eftcoco.py) | 118.15 / 65.16 |
 | [Self-mixing](resnet50_hmr_self_mix_eftcoco.py) | 111.46 / 62.81 |
 | [Synthetic occlusion](resnet50_hmr_syn_occ_eftcoco.py) | 110.42 / 62.78 |
-| [Synthetic occlusion over keypoints](resnet50_hmr_syn_occkp_eftcoco.py) | 100.75 / 59.13 |
+| [Synthetic occlusion (kp)](resnet50_hmr_syn_occkp_eftcoco.py) | 100.75 / 59.13 |
