@@ -34,7 +34,7 @@ model = dict(
         norm_cfg=dict(type='SyncBN', requires_grad=True),
         init_cfg=dict(
             type='Pretrained',
-            checkpoint='data/checkpoints/pose_coco_resnet_50_256x192.pth')),
+            checkpoint='data/checkpoints/resnet50_coco_pose.pth')),
     head=dict(
         type='HMRHead',
         feat_dim=2048,

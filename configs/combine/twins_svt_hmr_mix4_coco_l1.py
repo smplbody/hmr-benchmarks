@@ -26,21 +26,6 @@ img_res = 224
 # model settings
 model = dict(
     type='ImageBodyModelEstimator',
-    # backbone=dict(
-    #     type='PCPVT',
-    #     arch='base',
-    #     in_channels=3,
-    #     out_indices=(3, ),
-    #     qkv_bias=True,
-    #     norm_cfg=dict(type='LN', eps=1e-06),
-    #     norm_after_stage=[False, False, False, True],
-    #     drop_rate=0.0,
-    #     attn_drop_rate=0.,
-    #     drop_path_rate=0.3,
-    #     init_cfg=dict(
-    #         type='Pretrained',
-    #         prefix='backbone',
-    #         checkpoint='data/checkpoints/twins-pcpvt-base_3rdparty_8xb128_in1k_20220126-f8c4b0d5.pth')),
     backbone=dict(
         type='SVT',
         arch='base',
@@ -55,7 +40,7 @@ model = dict(
         init_cfg=dict(
             type='Pretrained',
             prefix='backbone',
-            checkpoint='data/checkpoints/twins_svt_epoch_210.pth')),
+            checkpoint='data/checkpoints/twins_svt_coco_pose.pth')),
     head=dict(
         type='HMRHrNetHead',
         feat_dim=768,
@@ -166,28 +151,28 @@ data = dict(
                     ann_file='eft_lspet_train.npz'),
                 dict(
                     type=dataset_type,
-                    dataset_name='posetrack',
+                    dataset_name='mpii',
                     data_prefix='data',
                     pipeline=train_pipeline,
                     convention='smpl_54',
-                    ann_file='eft_posetrack_train.npz'),
-                dict(
-                    type=dataset_type,
-                    dataset_name='ochuman',
-                    data_prefix='data',
-                    pipeline=train_pipeline,
-                    convention='smpl_54',
-                    ann_file='eft_ochuman_train.npz'),
+                    ann_file='eft_mpii_train.npz'),
+                # dict(
+                #     type=dataset_type,
+                #     dataset_name='mpii',
+                #     data_prefix='data',
+                #     pipeline=train_pipeline,
+                #     convention='smpl_54',
+                #     ann_file='mpii_train.npz'),
                 dict(
                     type=dataset_type,
                     dataset_name='mpi_inf_3dhp',
                     data_prefix='data',
                     pipeline=train_pipeline,
                     convention='smpl_54',
-                    ann_file='mpi_inf_3dhp_train.npz'),
+                    ann_file='spin_mpi_inf_3dhp_train.npz'),
             ],
             # partition=[0.35, 0.15, 0.1, 0.10, 0.10, 0.2],
-            partition=[0.3, 0.4, 0.05, 0.1, 0.05, 0.1],
+            partition=[0.5, 0.233, 0.046, 0.021, 0.2],
         ),
         adv_dataset=dict(
             type='MeshDataset',

@@ -25,22 +25,7 @@ img_res = 224
 
 # model settings
 model = dict(
-    type='ImageBodyModelEstimator',
-    # backbone=dict(
-    #     type='PCPVT',
-    #     arch='base',
-    #     in_channels=3,
-    #     out_indices=(3, ),
-    #     qkv_bias=True,
-    #     norm_cfg=dict(type='LN', eps=1e-06),
-    #     norm_after_stage=[False, False, False, True],
-    #     drop_rate=0.0,
-    #     attn_drop_rate=0.,
-    #     drop_path_rate=0.3,
-    #     init_cfg=dict(
-    #         type='Pretrained',
-    #         prefix='backbone',
-    #         checkpoint='data/checkpoints/twins-pcpvt-base_3rdparty_8xb128_in1k_20220126-f8c4b0d5.pth')),
+    type='ImageBodyModelEstimator',v
     backbone=dict(
         type='SVT',
         arch='base',
@@ -55,7 +40,7 @@ model = dict(
         init_cfg=dict(
             type='Pretrained',
             prefix='backbone',
-            checkpoint='data/checkpoints/twins_svt_epoch_210.pth')),
+            checkpoint='data/checkpoints/twins_svt_coco_pose.pth')),
     head=dict(
         type='HMRHrNetHead',
         feat_dim=768,
@@ -136,7 +121,7 @@ inference_pipeline = [
 ]
 
 data = dict(
-    samples_per_gpu=16,
+    samples_per_gpu=32,
     workers_per_gpu=1,
     train=dict(
         type='AdversarialDataset',
@@ -152,41 +137,41 @@ data = dict(
                     ann_file='h36m_mosh_train.npz'),
                 dict(
                     type=dataset_type,
-                    dataset_name='mpi_inf_3dhp',
+                    dataset_name='coco',
                     data_prefix='data',
                     pipeline=train_pipeline,
                     convention='smpl_54',
-                    ann_file='mpi_inf_3dhp_train.npz'),
-                dict(
-                    type=dataset_type,
-                    dataset_name='lsp',
-                    data_prefix='data',
-                    pipeline=train_pipeline,
-                    convention='smpl_54',
-                    ann_file='lsp_train.npz'),
+                    ann_file='eft_coco_train.npz'),
                 dict(
                     type=dataset_type,
                     dataset_name='lspet',
                     data_prefix='data',
                     pipeline=train_pipeline,
                     convention='smpl_54',
-                    ann_file='lspet_train.npz'),
+                    ann_file='eft_lspet_train.npz'),
                 dict(
                     type=dataset_type,
-                    dataset_name='mpii',
+                    dataset_name='posetrack',
                     data_prefix='data',
                     pipeline=train_pipeline,
                     convention='smpl_54',
-                    ann_file='mpii_train.npz'),
+                    ann_file='eft_posetrack_train.npz'),
                 dict(
                     type=dataset_type,
-                    dataset_name='coco',
+                    dataset_name='ochuman',
                     data_prefix='data',
                     pipeline=train_pipeline,
                     convention='smpl_54',
-                    ann_file='coco_2014_train.npz'),
+                    ann_file='eft_ochuman_train.npz'),
+                dict(
+                    type=dataset_type,
+                    dataset_name='mpi_inf_3dhp',
+                    data_prefix='data',
+                    pipeline=train_pipeline,
+                    convention='smpl_54',
+                    ann_file='mpi_inf_3dhp_train.npz'),
             ],
-            partition=[0.35, 0.15, 0.1, 0.10, 0.10, 0.2],
+            partition=[0.3, 0.4, 0.05, 0.1, 0.05, 0.1],
         ),
         adv_dataset=dict(
             type='MeshDataset',

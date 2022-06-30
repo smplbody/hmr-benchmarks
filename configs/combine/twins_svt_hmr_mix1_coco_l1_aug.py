@@ -26,21 +26,6 @@ img_res = 224
 # model settings
 model = dict(
     type='ImageBodyModelEstimator',
-    # backbone=dict(
-    #     type='PCPVT',
-    #     arch='base',
-    #     in_channels=3,
-    #     out_indices=(3, ),
-    #     qkv_bias=True,
-    #     norm_cfg=dict(type='LN', eps=1e-06),
-    #     norm_after_stage=[False, False, False, True],
-    #     drop_rate=0.0,
-    #     attn_drop_rate=0.,
-    #     drop_path_rate=0.3,
-    #     init_cfg=dict(
-    #         type='Pretrained',
-    #         prefix='backbone',
-    #         checkpoint='data/checkpoints/twins-pcpvt-base_3rdparty_8xb128_in1k_20220126-f8c4b0d5.pth')),
     backbone=dict(
         type='SVT',
         arch='base',

@@ -74,13 +74,6 @@ find_unused_parameters = True
 # model settings
 model = dict(
     type='ImageBodyModelEstimator',
-    # backbone=dict(
-    #     type='ResNet',
-    #     depth=50,
-    #     out_indices=[3],
-    #     norm_eval=False,
-    #     # norm_cfg=dict(type='SyncBN', requires_grad=True),
-    #     init_cfg=dict(type='Pretrained', checkpoint='torchvision://resnet50')),
     backbone=dict(
         type='PoseHighResolutionNet',
         extra=hrnet_extra,
@@ -88,7 +81,7 @@ model = dict(
         norm_cfg=dict(type='SyncBN', requires_grad=True),
         init_cfg=dict(
             type='Pretrained',
-            checkpoint='data/checkpoints/hrnet_pretrain.pth')),
+            checkpoint='data/checkpoints/hrnet_coco_pose.pth')),
     head=dict(
         type='HMRHrNetHead',
         feat_dim=2048,
