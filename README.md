@@ -224,7 +224,7 @@ We provide trained models from the optimal configurations for download and infer
 <!--
 - **Provide training log and model pths for inference**
 
-  Will add links to Gdrive --> -->
+  Will add links to Gdrive -->
 
 
 ## Installation
