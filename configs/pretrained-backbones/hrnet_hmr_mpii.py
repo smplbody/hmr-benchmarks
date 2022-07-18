@@ -81,7 +81,7 @@ model = dict(
         norm_cfg=dict(type='SyncBN', requires_grad=True),
         init_cfg=dict(
             type='Pretrained',
-            checkpoint='data/checkpoints/hrnet_w32_256x256_mpii_leoxb.pth')),
+            checkpoint='data/checkpoints/hrnet_mpii_pose.pth')),
     head=dict(
         type='HMRHrNetHead',
         feat_dim=2048,

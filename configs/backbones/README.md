@@ -4,22 +4,8 @@
 
 We provide the config files for training on different backbones:
 
-
-```BibTeX
-@inproceedings{HMR,
-  author    = {Angjoo Kanazawa and
-               Michael J. Black and
-               David W. Jacobs and
-               Jitendra Malik},
-  title     = {End-to-End Recovery of Human Shape and Pose},
-  booktitle = {CVPR},
-  year      = {2018}
-}
-```
-
-
 1. ResNet-50, -101, -152
-<details>
+<details  open>
 <summary align="right"><a href="http://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html">ResNet (CVPR'2016)</a></summary>
 
 ```bibtex
@@ -36,7 +22,7 @@ We provide the config files for training on different backbones:
 
 2. EfficientNet
 
-<details>
+<details open>
 <summary align="right"><a href="https://arxiv.org/abs/1905.11946v5">EfficientNet (ICML'2019)</a></summary>
 
 ```bibtex
@@ -53,7 +39,7 @@ We provide the config files for training on different backbones:
 
 3. HRNet-W32
 
-<details>
+<details open>
 <summary align="right"><a href="http://openaccess.thecvf.com/content_CVPR_2019/html/Sun_Deep_High-Resolution_Representation_Learning_for_Human_Pose_Estimation_CVPR_2019_paper.html">HRNet (CVPR'2019)</a></summary>
 
 ```bibtex
@@ -70,7 +56,7 @@ We provide the config files for training on different backbones:
 
 4. ResNext
 
-<details>
+<details open>
 <summary align="right"><a href="http://openaccess.thecvf.com/content_cvpr_2017/html/Xie_Aggregated_Residual_Transformations_CVPR_2017_paper.html">ResNext (CVPR'2017)</a></summary>
 
 ```bibtex
@@ -88,7 +74,7 @@ We provide the config files for training on different backbones:
 
 5. ViT
 
-<details>
+<details open>
 <summary align="right"><a href="https://arxiv.org/pdf/2010.11929.pdf">ViT (ICLR'2021)</a></summary>
 
 ```bibtex
@@ -100,11 +86,11 @@ We provide the config files for training on different backbones:
   url={https://openreview.net/forum?id=YicbFdNTTy}
 }
 ```
-
+</details>
 
 6. Swin
 
-<details>
+<details open>
 <summary align="right"><a href="https://arxiv.org/pdf/2103.14030.pdf">Swin (ICCV'2021)</a></summary>
 
 ```bibtex
@@ -115,10 +101,11 @@ We provide the config files for training on different backbones:
   year={2021}
 }
 ```
+</details>
 
 7. Twins-PCVCT, -SVT
 
-<details>
+<details open>
 <summary align="right"><a href="http://arxiv-export-lb.library.cornell.edu/abs/2104.13840">Twins (NeurIPS'2021)</a></summary>
 
 ```bibtex
@@ -129,21 +116,23 @@ We provide the config files for training on different backbones:
 	year={2021}
 }
 ```
+</details>
+
 
 
 ## Results and Models
 
 We evaluate HMR on 3DPW. Values are MPJPE/PA-MPJPE.
 
-| Config | 3DPW    |
-|:------:|:-------:|
-| [resnet50_hmr_pw3d.py](resnet50_hmr_pw3d.py) | 112.46 / 64.55 |
-| [resnet101_hmr_pw3d.py](resnet101_hmr_pw3d.py) | 112.67 / 63.36 |
-| [resnet152_hmr_pw3d.py](resnet152_hmr_pw3d.py) | 107.13 / 62.13 |
-| [resnext101_hmr_pw3d.py](resnext101_hmr_pw3d.py) | 114.43 / 64.95 |
-| [efficientnet_hmr_pw3d.py](efficientnet_hmr_pw3d.py) | 112.34 / 67.53 |
-| [hrnet_hmr_pw3d.py](hrnet_hmr_pw3d.py) | 118.15 / 65.16 |
-| [vit_hmr_pw3d.py](vit_hmr_pw3d.py) | 111.46 / 62.81 |
-| [swin_hmr_pw3d.py](swin_hmr_pw3d.py) | 110.42 / 62.78 |
-| [twins_pcpvt_hmr_pw3d.py](twins_pcpvt_hmr_pw3d.py) | 100.75 / 59.13 |
-| [twins_svt_hmr_pw3d.py](twins_svt_hmr_pw3d.py) | 105.42 / 60.11 |
+| Backbones | Config | 3DPW    |
+|:------:|:------:|:-------:|
+|ResNet-50| [resnet50_hmr_pw3d.py](resnet50_hmr_pw3d.py) | 112.46 / 64.55 |
+|ResNet-101| [resnet101_hmr_pw3d.py](resnet101_hmr_pw3d.py) | 112.67 / 63.36 |
+|ResNet-152| [resnet152_hmr_pw3d.py](resnet152_hmr_pw3d.py) | 107.13 / 62.13 |
+|ResNeXt-101| [resnext101_hmr_pw3d.py](resnext101_hmr_pw3d.py) | 114.43 / 64.95 |
+|EfficientNet-B5| [efficientnet_hmr_pw3d.py](efficientnet_hmr_pw3d.py) | 112.34 / 67.53 |
+|HRNet-W32| [hrnet_hmr_pw3d.py](hrnet_hmr_pw3d.py) | 118.15 / 65.16 |
+|ViT| [vit_hmr_pw3d.py](vit_hmr_pw3d.py) | 111.46 / 62.81 |
+|Swin| [swin_hmr_pw3d.py](swin_hmr_pw3d.py) | 110.42 / 62.78 |
+|Twins-PCPVT| [twins_pcpvt_hmr_pw3d.py](twins_pcpvt_hmr_pw3d.py) | 100.75 / 59.13 |
+|Twins-SVT| [twins_svt_hmr_pw3d.py](twins_svt_hmr_pw3d.py) | 105.42 / 60.11 |

@@ -34,7 +34,7 @@ model = dict(
         init_cfg=dict(
             type='Pretrained',
             checkpoint=  # noqa: E251
-            'data/checkpoints/res50_coco_256x192-ec54d7f3_20200709.pth')),
+            'data/checkpoints/resnet50_coco_pose.pth')),
     head=dict(
         type='HMRHead',
         feat_dim=2048,

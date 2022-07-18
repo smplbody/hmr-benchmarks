@@ -41,7 +41,7 @@ model = dict(
             type='Pretrained',
             prefix='backbone',
             checkpoint=  # noqa: E251,E501
-            'data/checkpoints/twins-svt-base_3rdparty_8xb128_in1k_20220126-e31cc8e9.pth'  # noqa: E251,E501
+            'data/checkpoints/twins_svt_imagenet.pth'  # noqa: E251,E501
         )),
     head=dict(
         type='HMRHrNetHead',
