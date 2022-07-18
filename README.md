@@ -2,10 +2,11 @@
 
 # Benchmarking 3D Pose and Shape Estimation Beyond Algorithms
 
+## Getting started
+### [Installation](#installation) | [Train](#train) | [Evaluation](#evaluation) | [FLOPs](#flops) |
 
-### [Experiments](#experiments) |[Installation](#installation) | [Train](#train) | [Evaluation](#evaluation) | [FLOPs](#flops) |
-
-
+## Experiments
+### [Single-datasets](#single-datasets) | [Mixed-datasets](#mixed-datasets) | [Augmentations](#augmentations) | [Backbones](#backbones) | [Losses](#losses) | [Backbone-initialisation](#backbone-initialisation) | [Downloads](#downloads) |
 
 </div>
 
@@ -26,17 +27,27 @@ https://user-images.githubusercontent.com/62529255/144362861-e794b404-c48f-4ebe-
     <img src="resources/dance001.gif" width="70%">
 </p>
 
-## Experiments
+### Major Features added to MMHuman3D
 
 We have added multiple major features on top of MMHuman3D.
+- **Benchmarks on 31 datasets**
+- **Benchmarks on 11 dataset combinations**
+- **Benchmarks on 9 backbones and different initialisation**
+- **Benchmarks on 9 augmentation techniques**
+- **Provide trained models on optimal configurations for inference**
+- **Evaluation on 5 test sets**
+- **FLOPs calculation**
+
+
+<!-- #### [Single-datasets](#single-datasets) | [Mixed--datasets](#installation) | [Train](#train) | [Evaluation](#evaluation) | [FLOPs](#flops) | -->
 
 
 <!-- - **Provide annotation files**
 
   Will add links to Gdrive. Future works can use these files to train on any of the 31 dataset. -->
-
 <!-- - **Provide config files for 31 single and multi-dataset benchmarks** -->
-- **Benchmarks on 31 datasets**
+## Experiments
+### Single-datasets
 <!--
   Future works can use these configs for training and obtain benchmarks on HMR for baseline comparison on their selected dataset mixes and partition. -->
 
@@ -83,10 +94,11 @@ Supported datasets:
 
 - **Benchmarks on different dataset combinations**
 
-Dataset mixes:
+### Mixed-datasets
 
 <details open>
 <summary>(click to collapse)</summary>
+
 1. Mix 1: H36M, MI, COCO
 2. Mix 2: H36M, MI, EFT-COCO
 3. Mix 3: H36M, MI, EFT-COCO, MPII
@@ -98,16 +110,18 @@ Dataset mixes:
 9. Mix 9: EFT-[COCO, PT, LSPET, OCH], MI, H36M
 10. Mix 10: PROX, MuCo, EFT-[COCO, PT, LSPET, OCH], UP-3D, MTP, Crowdpose
 11. Mix 11: EFT-[COCO, MPII, LSPET], MuCo, H36M
+
 </details>
 
   Please refer to [mixed-datasets.md](./configs/mixed/README.md) for training configs and results.
 
 - **Benchmarks on different backbones**
 
-Supported backbones:
+### Backbones
 
 <details open>
 <summary>(click to collapse)</summary>
+
 - [x] ResNet-50, -101, -152 (CVPR'2016)
 - [x] ResNeXt (CVPR'2017)
 - [x] HRNet (CVPR'2019)
@@ -115,6 +129,7 @@ Supported backbones:
 - [x] ViT
 - [x] Swin
 - [x] Twins
+
 </details>
 
 
@@ -122,13 +137,14 @@ Supported backbones:
   <!-- Train with a suite of augmentation techniques for a more robust model -->
   Please refer to [backbone.md](./configs/backbones/README.md) for training configs and results.
 
-- **Benchmarks on different backbone initialisation**
+### Backbone-initialisation
 
 We find that transfering knowledge from a pose estimation model gives more competitive performance.
 
 Initialised backbones:
 <details open>
 <summary>(click to collapse)</summary>
+
 1. ResNet-50 ImageNet (default)
 2. ResNet-50 MPII
 3. ResNet-50 COCO
@@ -138,17 +154,19 @@ Initialised backbones:
 7. Twins-SVT ImageNet
 8. Twins-SVT MPII
 9. Twins-SVT COCO
+
 </details>
 
   <!-- Train with a suite of augmentation techniques for a more robust model -->
   Please refer to [backbone.md](./configs/backbones/README.md) for training configs and results.
 
 
-- **Benchmarks on different augmentation techniques**
+### Augmentations
 
 New augmentations:
 <details open>
 <summary>(click to collapse)</summary>
+
 1. Coarse dropout
 2. Grid dropout
 3. Photometric distortion
@@ -158,32 +176,47 @@ New augmentations:
 7. Self-mixing
 8. Synthetic occlusion
 9. Synthetic occlusion over keypoints
+
 </details>
 
 
   <!-- Train with a suite of augmentation techniques for a more robust model -->
   Please refer to [augmentation.md](./configs/pretrained-backbones/README.md) for training configs and results.
 
-- **Benchmarks on different losses**
+### Losses
 
 We find that training with L1 loss gives more competitive performance. Please refer to [mixed-datasets-l1.md](./configs/mixed-l1/README.md) for training configs and results.
 
-- **Provide trained models for optimal configurations**
+### Downloads
 
-We find that training with L1 loss gives more competitive performance. Please refer to [mixed-datasets-l1.md](./configs/mixed-l1/README.md) for training configs and results.
+We provide trained models from the optimal configurations for download and inference. Please refer to [combine.md](./configs/combine/README.md) for training configs and results.
 
+| Dataset   | Backbone | 3DPW (PA-MPJPE)    | Download |
+|:------:|:-------:|:------:|:-------:|:------:|
+| H36M, MI, COCO, LSP, LSPET, MPII | ResNet-50 | 51.66 | [model](https://drive.google.com/file/d/1ifPYeQY8w-uJzl6yFejaTy_O86OmrjNH/view?usp=sharing) |
+| H36M, MI, COCO, LSP, LSPET, MPII | HRNet-W32 | 49.18 | [model](https://drive.google.com/file/d/1GV7T8ub5CCw_Tt0e-6SYlI_vimEl_ETy/view?usp=sharing) |
+| H36M, MI, COCO, LSP, LSPET, MPII | Twins-SVT | 48.77 | [model](https://drive.google.com/file/d/1UOLovoUUCvwXE14yoaJO9o-vpaeSvMPA/view?usp=sharing) |
+| H36M, MI, COCO, LSP, LSPET, MPII | Twins-SVT | 47.70 | [model](https://drive.google.com/file/d/1zk2JanLjkJ1W0TIAPhUaSZtVB-uayWFi/view?usp=sharing) |
+| EFT-[COCO, LSPET, MPII], H36M, SPIN-MI | HRNet-W32 | 47.68 | [model](https://drive.google.com/file/d/1NkijOkAKeNaDUx5XsF8nhL-MiboIcLRu/view?usp=sharing) |
+| EFT-[COCO, LSPET, MPII], H36M, SPIN-MI  | Twins-SVT | 47.31 | [model](https://drive.google.com/file/d/1ifPYeQY8w-uJzl6yFejaTy_O86OmrjNH/view?usp=sharing) |
+| H36M, MI, EFT-COCO | HRNet-W32 | 48.08 | [model](https://drive.google.com/file/d/19poA9gmmuOlMbcREBGRF70EqyM00bDxi/view?usp=sharing) |
+| H36M, MI, EFT-COCO  | Twins-SVT | 48.27 | [model](https://drive.google.com/file/d/1hnk8cMQ2QbA1jrZyHaRqqAN1jXdBo7ed/view?usp=sharing) |
+| H36M, MuCo, EFT-COCO  | Twins-SVT | 47.92 | [model](https://drive.google.com/file/d/1ifPYeQY8w-uJzl6yFejaTy_O86OmrjNH/view?usp=sharing) |
 
+<!--
 - **Evaluation for different benchmarks**
 
 <!-- Easily obtain benchmarks on their trained model on five test sets (1) 3DPW-test (2) H36M (P1/ P2) test (3) EFT-OCHuman-test (4)  EFT-COCO-Val (5) EFT-LSPET-test -->
 Test sets for evaluation:
 <details open>
 <summary>(click to collapse)</summary>
+
 - 3DPW-test (P2)
 - H36m-test (P2)
 - EFT-COCO-val
 - EFT-LSPET-test
 - EFT-OCHuman-test
+
 </details>
 
 
@@ -193,7 +226,7 @@ Test sets for evaluation:
 <!--
 - **Provide training log and model pths for inference**
 
-  Will add links to Gdrive -->
+  Will add links to Gdrive --> -->
 
 
 ## Installation
