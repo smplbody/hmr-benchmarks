@@ -24,7 +24,7 @@ https://user-images.githubusercontent.com/62529255/144362861-e794b404-c48f-4ebe-
 <p align="center">
     <!-- <img src="resources/dance3.gif" width="99%"> -->
     <img src="resources/dance.gif" width="99%">
-    <img src="resources/dance001.gif" width="70%">
+    <img src="resources/dance001.gif" width="80%">
 </p>
 
 ### Major Features added to MMHuman3D
@@ -115,8 +115,6 @@ Supported datasets:
 
   Please refer to [mixed-datasets.md](./configs/mixed/README.md) for training configs and results.
 
-- **Benchmarks on different backbones**
-
 ### Backbones
 
 <details open>
@@ -131,8 +129,6 @@ Supported datasets:
 - [x] Twins
 
 </details>
-
-
 
   <!-- Train with a suite of augmentation techniques for a more robust model -->
   Please refer to [backbone.md](./configs/backbones/README.md) for training configs and results.
@@ -191,8 +187,9 @@ We find that training with L1 loss gives more competitive performance. Please re
 
 We provide trained models from the optimal configurations for download and inference. Please refer to [combine.md](./configs/combine/README.md) for training configs and results.
 
+
 | Dataset   | Backbone | 3DPW (PA-MPJPE)    | Download |
-|:------:|:-------:|:------:|:-------:|:------:|
+|:------:|:-------:|:------:|:-------:|
 | H36M, MI, COCO, LSP, LSPET, MPII | ResNet-50 | 51.66 | [model](https://drive.google.com/file/d/1ifPYeQY8w-uJzl6yFejaTy_O86OmrjNH/view?usp=sharing) |
 | H36M, MI, COCO, LSP, LSPET, MPII | HRNet-W32 | 49.18 | [model](https://drive.google.com/file/d/1GV7T8ub5CCw_Tt0e-6SYlI_vimEl_ETy/view?usp=sharing) |
 | H36M, MI, COCO, LSP, LSPET, MPII | Twins-SVT | 48.77 | [model](https://drive.google.com/file/d/1UOLovoUUCvwXE14yoaJO9o-vpaeSvMPA/view?usp=sharing) |
@@ -203,11 +200,12 @@ We provide trained models from the optimal configurations for download and infer
 | H36M, MI, EFT-COCO  | Twins-SVT | 48.27 | [model](https://drive.google.com/file/d/1hnk8cMQ2QbA1jrZyHaRqqAN1jXdBo7ed/view?usp=sharing) |
 | H36M, MuCo, EFT-COCO  | Twins-SVT | 47.92 | [model](https://drive.google.com/file/d/1ifPYeQY8w-uJzl6yFejaTy_O86OmrjNH/view?usp=sharing) |
 
+
 <!--
 - **Evaluation for different benchmarks**
 
 <!-- Easily obtain benchmarks on their trained model on five test sets (1) 3DPW-test (2) H36M (P1/ P2) test (3) EFT-OCHuman-test (4)  EFT-COCO-Val (5) EFT-LSPET-test -->
-Test sets for evaluation:
+<!-- Test sets for evaluation:
 <details open>
 <summary>(click to collapse)</summary>
 
@@ -222,7 +220,7 @@ Test sets for evaluation:
 
 - **FLOPs and Param evaluation for trained model**
 
-  Evaluate flops and params for trained model
+  Evaluate flops and params for trained model -->
 <!--
 - **Provide training log and model pths for inference**
 
