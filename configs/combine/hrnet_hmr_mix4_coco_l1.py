@@ -74,6 +74,7 @@ find_unused_parameters = True
 # model settings
 model = dict(
     type='ImageBodyModelEstimator',
+<<<<<<< HEAD
     # backbone=dict(
     #     type='ResNet',
     #     depth=50,
@@ -81,6 +82,8 @@ model = dict(
     #     norm_eval=False,
     #     # norm_cfg=dict(type='SyncBN', requires_grad=True),
     #     init_cfg=dict(type='Pretrained', checkpoint='torchvision://resnet50')),
+=======
+>>>>>>> combine
     backbone=dict(
         type='PoseHighResolutionNet',
         extra=hrnet_extra,
@@ -88,7 +91,11 @@ model = dict(
         norm_cfg=dict(type='SyncBN', requires_grad=True),
         init_cfg=dict(
             type='Pretrained',
+<<<<<<< HEAD
             checkpoint='data/checkpoints/hrnet_pretrain.pth')),
+=======
+            checkpoint='data/checkpoints/hrnet_coco_pose.pth')),
+>>>>>>> combine
     head=dict(
         type='HMRHrNetHead',
         feat_dim=2048,
@@ -204,13 +211,6 @@ data = dict(
                     pipeline=train_pipeline,
                     convention='smpl_54',
                     ann_file='eft_mpii_train.npz'),
-                # dict(
-                #     type=dataset_type,
-                #     dataset_name='mpii',
-                #     data_prefix='data',
-                #     pipeline=train_pipeline,
-                #     convention='smpl_54',
-                #     ann_file='mpii_train.npz'),
                 dict(
                     type=dataset_type,
                     dataset_name='mpi_inf_3dhp',
@@ -219,7 +219,6 @@ data = dict(
                     convention='smpl_54',
                     ann_file='spin_mpi_inf_3dhp_train.npz'),
             ],
-            # partition=[0.35, 0.15, 0.1, 0.10, 0.10, 0.2],
             partition=[0.5, 0.233, 0.046, 0.021, 0.2],
         ),
         adv_dataset=dict(

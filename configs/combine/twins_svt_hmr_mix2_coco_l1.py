@@ -5,9 +5,11 @@ use_adversarial_train = True
 evaluation = dict(metric=['pa-mpjpe', 'mpjpe'])
 # optimizer
 optimizer = dict(
-    backbone=dict(type='Adam', lr=2.5e-4),
+    # backbone=dict(type='Adam', lr=2.5e-4),
+    backbone=dict(type='Adam', lr=5e-5),
     head=dict(type='Adam', lr=2.5e-4),
     disc=dict(type='Adam', lr=1e-4))
+optimizer_config = dict(grad_clip=None)
 # learning policy
 lr_config = dict(policy='Fixed', by_epoch=False)
 runner = dict(type='EpochBasedRunner', max_epochs=100)
@@ -21,22 +23,27 @@ log_config = dict(
 
 img_res = 224
 
-find_unused_parameters = True
 # model settings
 model = dict(
     type='ImageBodyModelEstimator',
     backbone=dict(
-        type='ResNet',
-        depth=50,
-        out_indices=[3],
-        norm_eval=False,
-        norm_cfg=dict(type='SyncBN', requires_grad=True),
+        type='SVT',
+        arch='base',
+        in_channels=3,
+        out_indices=(3, ),
+        qkv_bias=True,
+        norm_cfg=dict(type='LN'),
+        norm_after_stage=[False, False, False, True],
+        drop_rate=0.0,
+        attn_drop_rate=0.,
+        drop_path_rate=0.3,
         init_cfg=dict(
             type='Pretrained',
-            checkpoint='data/checkpoints/resnet50_coco_pose.pth')),
+            prefix='backbone',
+            checkpoint='data/checkpoints/twins_svt_coco_pose.pth')),
     head=dict(
-        type='HMRHead',
-        feat_dim=2048,
+        type='HMRHrNetHead',
+        feat_dim=768,
         smpl_mean_params='data/body_models/smpl_mean_params.npz'),
     body_model_train=dict(
         type='SMPL',
@@ -74,11 +81,10 @@ data_keys = [
 ]
 train_pipeline = [
     dict(type='LoadImageFromFile'),
-    dict(type='RandomChannelNoise', noise_factor=0.2),
+    dict(type='RandomChannelNoise', noise_factor=0.4),
     dict(type='RandomHorizontalFlip', flip_prob=0.5, convention='smpl_54'),
     dict(type='GetRandomScaleRotation', rot_factor=30, scale_factor=0.25),
     dict(type='MeshAffine', img_res=224),
-    dict(type='MixingErasing', ntype='self', mlist=['h36m']),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='ImageToTensor', keys=['img']),
     dict(type='ToTensor', keys=data_keys),
@@ -138,34 +144,13 @@ data = dict(
                     ann_file='mpi_inf_3dhp_train.npz'),
                 dict(
                     type=dataset_type,
-                    dataset_name='lsp',
-                    data_prefix='data',
-                    pipeline=train_pipeline,
-                    convention='smpl_54',
-                    ann_file='lsp_train.npz'),
-                dict(
-                    type=dataset_type,
-                    dataset_name='lspet',
-                    data_prefix='data',
-                    pipeline=train_pipeline,
-                    convention='smpl_54',
-                    ann_file='lspet_train.npz'),
-                dict(
-                    type=dataset_type,
-                    dataset_name='mpii',
-                    data_prefix='data',
-                    pipeline=train_pipeline,
-                    convention='smpl_54',
-                    ann_file='mpii_train.npz'),
-                dict(
-                    type=dataset_type,
                     dataset_name='coco',
                     data_prefix='data',
                     pipeline=train_pipeline,
                     convention='smpl_54',
-                    ann_file='coco_2014_train.npz'),
+                    ann_file='eft_coco_train.npz'),
             ],
-            partition=[0.35, 0.15, 0.1, 0.10, 0.10, 0.2],
+            partition=[0.5, 0.3, 0.2],
         ),
         adv_dataset=dict(
             type='MeshDataset',
@@ -200,5 +185,4 @@ data = dict(
 )
 
 custom_imports = dict(
-    imports=['mmhuman3d.data.datasets.pipelines.mix'],
-    allow_failed_imports=False)
+    imports=['mmhuman3d.models.backbones.twins'], allow_failed_imports=False)
