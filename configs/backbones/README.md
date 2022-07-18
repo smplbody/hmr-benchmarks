@@ -118,19 +118,21 @@ We provide the config files for training on different backbones:
 ```
 </details>
 
+
+
 ## Results and Models
 
 We evaluate HMR on 3DPW. Values are MPJPE/PA-MPJPE.
 
-| Config | 3DPW    |
-|:------:|:-------:|
-| [resnet50_hmr_pw3d.py](resnet50_hmr_pw3d.py) | 112.46 / 64.55 |
-| [resnet101_hmr_pw3d.py](resnet101_hmr_pw3d.py) | 112.67 / 63.36 |
-| [resnet152_hmr_pw3d.py](resnet152_hmr_pw3d.py) | 107.13 / 62.13 |
-| [resnext101_hmr_pw3d.py](resnext101_hmr_pw3d.py) | 114.43 / 64.95 |
-| [efficientnet_hmr_pw3d.py](efficientnet_hmr_pw3d.py) | 112.34 / 67.53 |
-| [hrnet_hmr_pw3d.py](hrnet_hmr_pw3d.py) | 118.15 / 65.16 |
-| [vit_hmr_pw3d.py](vit_hmr_pw3d.py) | 111.46 / 62.81 |
-| [swin_hmr_pw3d.py](swin_hmr_pw3d.py) | 110.42 / 62.78 |
-| [twins_pcpvt_hmr_pw3d.py](twins_pcpvt_hmr_pw3d.py) | 100.75 / 59.13 |
-| [twins_svt_hmr_pw3d.py](twins_svt_hmr_pw3d.py) | 105.42 / 60.11 |
+| Backbones | Config | 3DPW    |
+|:------:|:------:|:-------:|
+|ResNet-50| [resnet50_hmr_pw3d.py](resnet50_hmr_pw3d.py) | 112.46 / 64.55 |
+|ResNet-101| [resnet101_hmr_pw3d.py](resnet101_hmr_pw3d.py) | 112.67 / 63.36 |
+|ResNet-152| [resnet152_hmr_pw3d.py](resnet152_hmr_pw3d.py) | 107.13 / 62.13 |
+|ResNeXt-101| [resnext101_hmr_pw3d.py](resnext101_hmr_pw3d.py) | 114.43 / 64.95 |
+|EfficientNet-B5| [efficientnet_hmr_pw3d.py](efficientnet_hmr_pw3d.py) | 112.34 / 67.53 |
+|HRNet-W32| [hrnet_hmr_pw3d.py](hrnet_hmr_pw3d.py) | 118.15 / 65.16 |
+|ViT| [vit_hmr_pw3d.py](vit_hmr_pw3d.py) | 111.46 / 62.81 |
+|Swin| [swin_hmr_pw3d.py](swin_hmr_pw3d.py) | 110.42 / 62.78 |
+|Twins-PCPVT| [twins_pcpvt_hmr_pw3d.py](twins_pcpvt_hmr_pw3d.py) | 100.75 / 59.13 |
+|Twins-SVT| [twins_svt_hmr_pw3d.py](twins_svt_hmr_pw3d.py) | 105.42 / 60.11 |
