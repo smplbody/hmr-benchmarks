@@ -84,7 +84,6 @@ train_pipeline = [
     dict(type='RandomChannelNoise', noise_factor=0.2),
     dict(type='RandomHorizontalFlip', flip_prob=0.5, convention='smpl_54'),
     dict(type='GetRandomScaleRotation', rot_factor=30, scale_factor=0.25),
-    # dict(type='PhotometricDistortion', mlist=['coco']),
     dict(type='MeshAffine', img_res=224),
     dict(type='MixingErasing', ntype='self', mlist=['h36m']),
     dict(type='Normalize', **img_norm_cfg),

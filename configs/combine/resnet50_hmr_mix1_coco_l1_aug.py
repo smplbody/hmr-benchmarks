@@ -8,7 +8,6 @@ optimizer = dict(
     backbone=dict(type='Adam', lr=2.5e-4),
     head=dict(type='Adam', lr=2.5e-4),
     disc=dict(type='Adam', lr=1e-4))
-# optimizer_config = dict(grad_clip=dict(max_norm=2.0))
 # learning policy
 lr_config = dict(policy='Fixed', by_epoch=False)
 runner = dict(type='EpochBasedRunner', max_epochs=100)
