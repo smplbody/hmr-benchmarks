@@ -39,7 +39,11 @@ We have added multiple major features on top of MMHuman3D.
 - **Benchmarks on 31 datasets**
 <!--
   Future works can use these configs for training and obtain benchmarks on HMR for baseline comparison on their selected dataset mixes and partition. -->
+
 Supported datasets:
+<details open>
+<summary>(click to collapse)</summary>
+
 1. [AGORA](https://agora.is.tue.mpg.de/) (CVPR'2021)
 2. [AI Challenger](https://challenger.ai/) (ICME'2019)
 3. [COCO](https://cocodataset.org/#home) (ECCV'2014)
@@ -72,11 +76,17 @@ Supported datasets:
 30. [VLOG](https://github.com/akanazawa/human_dynamics/blob/master/doc/vlog_people.md) (CVPR'2019)
 31. [CrowdPose](https://github.com/Jeff-sjtu/CrowdPose) (CVPR'2019)
 
+</details>
+
+
   Please refer to [datasets.md](./configs/datasets/README.md) for training configs and results.
 
 - **Benchmarks on different dataset combinations**
 
 Dataset mixes:
+
+<details open>
+<summary>(click to collapse)</summary>
 1. Mix 1: H36M, MI, COCO
 2. Mix 2: H36M, MI, EFT-COCO
 3. Mix 3: H36M, MI, EFT-COCO, MPII
@@ -88,12 +98,16 @@ Dataset mixes:
 9. Mix 9: EFT-[COCO, PT, LSPET, OCH], MI, H36M
 10. Mix 10: PROX, MuCo, EFT-[COCO, PT, LSPET, OCH], UP-3D, MTP, Crowdpose
 11. Mix 11: EFT-[COCO, MPII, LSPET], MuCo, H36M
+</details>
 
   Please refer to [mixed-datasets.md](./configs/mixed/README.md) for training configs and results.
 
 - **Benchmarks on different backbones**
 
 Supported backbones:
+
+<details open>
+<summary>(click to collapse)</summary>
 - [x] ResNet-50, -101, -152 (CVPR'2016)
 - [x] ResNeXt (CVPR'2017)
 - [x] HRNet (CVPR'2019)
@@ -101,30 +115,20 @@ Supported backbones:
 - [x] ViT
 - [x] Swin
 - [x] Twins
+</details>
+
+
 
   <!-- Train with a suite of augmentation techniques for a more robust model -->
   Please refer to [backbone.md](./configs/backbones/README.md) for training configs and results.
 
 - **Benchmarks on different backbone initialisation**
 
-Supported backbones:
-- [x] ResNet-50, -101, -152 (CVPR'2016)
-- [x] ResNeXt (CVPR'2017)
-- [x] HRNet (CVPR'2019)
-- [x] EfficientNet
-- [x] ViT
-- [x] Swin
-- [x] Twins
-
-  <!-- Train with a suite of augmentation techniques for a more robust model -->
-  Please refer to [backbone.md](./configs/backbones/README.md) for training configs and results.
-
-
-- **Benchmarks on different augmentation techniques**
-
 We find that transfering knowledge from a pose estimation model gives more competitive performance.
 
 Initialised backbones:
+<details open>
+<summary>(click to collapse)</summary>
 1. ResNet-50 ImageNet (default)
 2. ResNet-50 MPII
 3. ResNet-50 COCO
@@ -134,6 +138,28 @@ Initialised backbones:
 7. Twins-SVT ImageNet
 8. Twins-SVT MPII
 9. Twins-SVT COCO
+</details>
+
+  <!-- Train with a suite of augmentation techniques for a more robust model -->
+  Please refer to [backbone.md](./configs/backbones/README.md) for training configs and results.
+
+
+- **Benchmarks on different augmentation techniques**
+
+New augmentations:
+<details open>
+<summary>(click to collapse)</summary>
+1. Coarse dropout
+2. Grid dropout
+3. Photometric distortion
+4. Random crop
+5. Hard erasing
+6. Soft erasing
+7. Self-mixing
+8. Synthetic occlusion
+9. Synthetic occlusion over keypoints
+</details>
+
 
   <!-- Train with a suite of augmentation techniques for a more robust model -->
   Please refer to [augmentation.md](./configs/pretrained-backbones/README.md) for training configs and results.
@@ -151,11 +177,15 @@ We find that training with L1 loss gives more competitive performance. Please re
 
 <!-- Easily obtain benchmarks on their trained model on five test sets (1) 3DPW-test (2) H36M (P1/ P2) test (3) EFT-OCHuman-test (4)  EFT-COCO-Val (5) EFT-LSPET-test -->
 Test sets for evaluation:
+<details open>
+<summary>(click to collapse)</summary>
 - 3DPW-test (P2)
 - H36m-test (P2)
 - EFT-COCO-val
 - EFT-LSPET-test
 - EFT-OCHuman-test
+</details>
+
 
 - **FLOPs and Param evaluation for trained model**
 
