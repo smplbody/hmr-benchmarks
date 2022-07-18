@@ -32,7 +32,7 @@ We provide the config files for training on 31 different datasets:
 27. [3DPW](https://virtualhumans.mpi-inf.mpg.de/3DPW/) (ECCV'2018)
 28. [SURREAL](https://www.di.ens.fr/willow/research/surreal/data/) (CVPR'2017)
 29. [UP-3D](https://files.is.tuebingen.mpg.de/classner/up/) (CVPR'2017)
-30. [VLOG] (https://github.com/akanazawa/human_dynamics/blob/master/doc/vlog_people.md) (CVPR'2019)
+30. [VLOG](https://github.com/akanazawa/human_dynamics/blob/master/doc/vlog_people.md) (CVPR'2019)
 31. [CrowdPose](https://github.com/Jeff-sjtu/CrowdPose) (CVPR'2019)
 
 
