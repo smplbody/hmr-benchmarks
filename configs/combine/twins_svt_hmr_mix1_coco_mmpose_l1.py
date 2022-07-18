@@ -22,7 +22,6 @@ log_config = dict(
     ])
 
 img_res = 224
-      
 
 # model settings
 model = dict(
@@ -39,8 +38,8 @@ model = dict(
     #     attn_drop_rate=0.,
     #     drop_path_rate=0.3,
     #     init_cfg=dict(
-    #         type='Pretrained', 
-    #         prefix='backbone', 
+    #         type='Pretrained',
+    #         prefix='backbone',
     #         checkpoint='data/checkpoints/twins-pcpvt-base_3rdparty_8xb128_in1k_20220126-f8c4b0d5.pth')),
     backbone=dict(
         type='SVT',
@@ -54,8 +53,8 @@ model = dict(
         attn_drop_rate=0.,
         drop_path_rate=0.3,
         init_cfg=dict(
-            type='Pretrained', 
-            prefix='backbone', 
+            type='Pretrained',
+            prefix='backbone',
             checkpoint='data/checkpoints/twins_svt_epoch_210.pth')),
     head=dict(
         type='HMRHrNetHead',
@@ -221,7 +220,5 @@ data = dict(
         ann_file='pw3d_test.npz'),
 )
 
-
 custom_imports = dict(
-    imports=['mmhuman3d.models.backbones.twins'],
-    allow_failed_imports=False)
+    imports=['mmhuman3d.models.backbones.twins'], allow_failed_imports=False)
