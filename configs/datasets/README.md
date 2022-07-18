@@ -4,7 +4,7 @@
 
 We provide the config files for training on 31 different datasets:
 1. [AGORA](https://agora.is.tue.mpg.de/) (CVPR'2021)
-2. AI Challenger
+2. [AI Challenger](https://challenger.ai/) (ICME'2019)
 3. [COCO](https://cocodataset.org/#home) (ECCV'2014)
 4. [COCO-WholeBody](https://github.com/jin-s13/COCO-WholeBody) (ECCV'2020)
 5. [EFT-COCO-Part](https://github.com/facebookresearch/eft) (3DV'2021)
