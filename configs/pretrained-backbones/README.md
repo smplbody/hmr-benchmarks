@@ -8,9 +8,9 @@ Download the pretrained backbones from here:
 3. [hrnet_imagenet.pth](https://drive.google.com/file/d/1snrLDyHgpTXximcJX6EqX7M8okQHVjH7/view?usp=sharing)
 4. [hrnet_mpii_pose.pth](https://drive.google.com/file/d/1JaKYRbP-hKKZCwAqlvDQ5hIhueBYGf0i/view?usp=sharing)
 5. [hrnet_coco_pose.pth](https://drive.google.com/file/d/1Dt1eRN_YnltaDBBe0JU8f6oSfhB2pxeh/view?usp=sharing)
-3. [twins_svt_imagenet.pth](https://drive.google.com/file/d/155neTTkGZ_jtNbRS-OYwJWwsbx59jtzK/view?usp=sharing)
-4. [twins_svt_mpii_pose.pth](https://drive.google.com/file/d/1RItsH4dDQmsk6Xc9wyaKyW3wYWFKpN6p/view?usp=sharing)
-5. [twins_svt_coco_pose.pth](https://drive.google.com/file/d/1Fcq_4G3ccM-xpmBK4M--Lu3xCXFrQ_ui/view?usp=sharing)
+6. [twins_svt_imagenet.pth](https://drive.google.com/file/d/155neTTkGZ_jtNbRS-OYwJWwsbx59jtzK/view?usp=sharing)
+7. [twins_svt_mpii_pose.pth](https://drive.google.com/file/d/1RItsH4dDQmsk6Xc9wyaKyW3wYWFKpN6p/view?usp=sharing)
+8. [twins_svt_coco_pose.pth](https://drive.google.com/file/d/1Fcq_4G3ccM-xpmBK4M--Lu3xCXFrQ_ui/view?usp=sharing)
 
 
 

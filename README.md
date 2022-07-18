@@ -3,86 +3,98 @@
 # Benchmarking 3D Pose and Shape Estimation Beyond Algorithms
 
 
-### [Installation](#installation) | [Train](#train) | [Evaluation](#evaluation) | [Augmentation](#augmentation) | [FLOPs](#flops) | [Backbones](#backbones)
+### [Experiments](#experiments) |[Installation](#installation) | [Train](#train) | [Evaluation](#evaluation) | [FLOPs](#flops) |
+
+
 
 </div>
 
 ## Introduction
 
-This repository builds upon [MMHuman3D](https://openmmlab.com/mmhuman3d), an open source PyTorch-based codebase for the use of 3D human parametric models in computer vision and computer graphics. MMHuman3D is a part of the [OpenMMLab](https://openmmlab.com/) project.
+This repository builds upon [MMHuman3D](https://openmmlab.com/mmhuman3d), an open source PyTorch-based codebase for the use of 3D human parametric models in computer vision and computer graphics. MMHuman3D is a part of the [OpenMMLab](https://openmmlab.com/) project. The main branch works with **PyTorch 1.7+**.
 
 These features will be contributed to MMHuman3D at a later date.
 
-The main branch works with **PyTorch 1.7+**.
 <!--
 https://user-images.githubusercontent.com/62529255/144362861-e794b404-c48f-4ebe-b4de-b91c3fbbaa3b.mp4 -->
 
 
-HMR+ uses the same ResNet-50 backbone and training datasets as HMR and SPIN (without fittings). We find that adopting our training tricks is sufficient to build a model that is comparable to the previous SOTA algorithms without using bigger model capacity or newer datasets. We also include HMR* uses Twins-SVT backbone and datasets following PARE.  See our [paper]() for more details.
-<p>
-    <img src="resources/dance3.gif" width="99%">
+<!-- HMR+ uses the same ResNet-50 backbone and training datasets as HMR and SPIN (without fittings). We find that adopting our training tricks is sufficient to build a model that is comparable to the previous SOTA algorithms without using bigger model capacity or newer datasets. We also include HMR* uses Twins-SVT backbone and datasets following PARE.  See our [paper]() for more details. -->
+<p align="center">
+    <!-- <img src="resources/dance3.gif" width="99%"> -->
     <img src="resources/dance.gif" width="99%">
-    <img src="resources/dance001.gif" width="50%">
+    <img src="resources/dance001.gif" width="70%">
 </p>
 
-### Major Features added onto MMHuman3D
+## Experiments
+
+We have added multiple major features on top of MMHuman3D.
 
 
-- **Provide annotation files**
+<!-- - **Provide annotation files**
 
-  Will add links to Gdrive. Future works can use these files to train on any of the 31 dataset.
+  Will add links to Gdrive. Future works can use these files to train on any of the 31 dataset. -->
 
-- **Provide config files for 31 single and multi-dataset benchmarks**
-
-  Future works can use these configs for training and obtain benchmarks on HMR for baseline comparison on their selected dataset mixes and partition.
-
-- **Evaluation for different benchmarks**
-
-  Easily obtain benchmarks on their trained model on five test sets (1) 3DPW-test (2) H36M (P1/ P2) test (3) EFT-OCHuman-test (4)  EFT-COCO-Val (5) EFT-LSPET-test
-
-- **Add 9 augmentation techniques**
-
-  Train with a suite of augmentation techniques for a more robust model
-
-- **FLOPs and Param evaluation for trained model**
-
-  Evaluate flops and params for trained model
-
-- **Provide training log and model pths for inference**
-
-  Will add links to Gdrive
-
-
+<!-- - **Provide config files for 31 single and multi-dataset benchmarks** -->
+- **Benchmarks on 31 datasets**
+<!--
+  Future works can use these configs for training and obtain benchmarks on HMR for baseline comparison on their selected dataset mixes and partition. -->
 Supported datasets:
+1. [AGORA](https://agora.is.tue.mpg.de/) (CVPR'2021)
+2. [AI Challenger](https://challenger.ai/) (ICME'2019)
+3. [COCO](https://cocodataset.org/#home) (ECCV'2014)
+4. [COCO-WholeBody](https://github.com/jin-s13/COCO-WholeBody) (ECCV'2020)
+5. [EFT-COCO-Part](https://github.com/facebookresearch/eft) (3DV'2021)
+6. [EFT-COCO](https://github.com/facebookresearch/eft) (3DV'2021)
+7. [EFT-LSPET](https://github.com/facebookresearch/eft) (3DV'2021)
+8. [EFT-OCHuman](https://github.com/facebookresearch/eft) (3DV'2021)
+9. [EFT-PoseTrack](https://github.com/facebookresearch/eft) (3DV'2021)
+10. [EFT-MPII](https://github.com/facebookresearch/eft) (3DV'2021)
+11. [Human3.6M](http://vision.imar.ro/human3.6m/description.php) (TPAMI'2014)
+12. [InstaVariety](https://github.com/akanazawa/human_dynamics/blob/master/doc/insta_variety.md) (CVPR'2019)
+13. [LIP](https://www.sysu-hcp.net/projects/cv/38.html) (CVPR'2017)
+14. [LSP](https://sam.johnson.io/research/lsp.html) (BMVC'2010)
+15. [LSP-Extended](https://sam.johnson.io/research/lspet.html) (CVPR'2011)
+16. [MPI-INF-3DHP](http://gvv.mpi-inf.mpg.de/3dhp-dataset/) (3DC'2017)
+17. [MPII](http://human-pose.mpi-inf.mpg.de/) (CVPR'2014)
+18. [MTP](https://tuch.is.tue.mpg.de/) (CVPR'2021)
+19. [MuCo-3DHP](https://vcai.mpi-inf.mpg.de/projects/SingleShotMultiPerson/) (3DV'2018)
+20. [MuPoTs-3D](https://vcai.mpi-inf.mpg.de/projects/SingleShotMultiPerson/) (3DV'2018)
+21. [OCHuman](http://www.liruilong.cn/project_pages/pose2seg.html) (CVPR'2019)
+22. [3DOH50K](https://www.yangangwang.com/papers/ZHANG-OOH-2020-03.html) (CVPR'2020)
+23. [Penn Action](http://dreamdragon.github.io/PennAction/) (ICCV'2012)
+24. [3D-People](https://cv.iri.upc-csic.es/) (ICCV'2019)
+25. [PoseTrack18](https://posetrack.net/users/download.php) (CVPR'2018)
+26. [PROX](https://prox.is.tue.mpg.de/) (ICCV'2019)
+27. [3DPW](https://virtualhumans.mpi-inf.mpg.de/3DPW/) (ECCV'2018)
+28. [SURREAL](https://www.di.ens.fr/willow/research/surreal/data/) (CVPR'2017)
+29. [UP-3D](https://files.is.tuebingen.mpg.de/classner/up/) (CVPR'2017)
+30. [VLOG](https://github.com/akanazawa/human_dynamics/blob/master/doc/vlog_people.md) (CVPR'2019)
+31. [CrowdPose](https://github.com/Jeff-sjtu/CrowdPose) (CVPR'2019)
 
-<details open>
-<summary>(click to collapse)</summary>
+  Please refer to [datasets.md](./configs/datasets/README.md) for training configs and results.
 
-- [x] [3DPW](https://virtualhumans.mpi-inf.mpg.de/3DPW/) (ECCV'2018)
-- [x] [AGORA](https://agora.is.tue.mpg.de/) (CVPR'2021)
-- [x] [AMASS](https://amass.is.tue.mpg.de/) (ICCV'2019)
-- [x] [COCO](https://cocodataset.org/#home) (ECCV'2014)
-- [x] [COCO-WholeBody](https://github.com/jin-s13/COCO-WholeBody) (ECCV'2020)
-- [x] [CrowdPose](https://github.com/Jeff-sjtu/CrowdPose) (CVPR'2019)
-- [x] [EFT](https://github.com/facebookresearch/eft) (3DV'2021)
-- [x] [Human3.6M](http://vision.imar.ro/human3.6m/description.php) (TPAMI'2014)
-- [x] [InstaVariety](https://github.com/akanazawa/human_dynamics/blob/master/doc/insta_variety.md) (CVPR'2019)
-- [x] [LSP](https://sam.johnson.io/research/lsp.html) (BMVC'2010)
-- [x] [LSP-Extended](https://sam.johnson.io/research/lspet.html) (CVPR'2011)
-- [x] [MPI-INF-3DHP](http://gvv.mpi-inf.mpg.de/3dhp-dataset/) (3DC'2017)
-- [x] [MPII](http://human-pose.mpi-inf.mpg.de/) (CVPR'2014)
-- [x] [Penn Action](http://dreamdragon.github.io/PennAction/) (ICCV'2012)
-- [x] [PoseTrack18](https://posetrack.net/users/download.php) (CVPR'2018)
-- [x] [SURREAL](https://www.di.ens.fr/willow/research/surreal/data/) (CVPR'2017)
-- [x] [UP3D](https://files.is.tuebingen.mpg.de/classner/up/) (CVPR'2017)
+- **Benchmarks on different dataset combinations**
 
+Dataset mixes:
+1. Mix 1: H36M, MI, COCO
+2. Mix 2: H36M, MI, EFT-COCO
+3. Mix 3: H36M, MI, EFT-COCO, MPII
+4. Mix 4: H36M, MuCo, EFT-COCO
+5. Mix 5: H36M, MI, COCO, LSP, LSPET, MPII
+6. Mix 6: EFT-[COCO, MPII, LSPET], SPIN-MI, H36M
+7. Mix 7: EFT-[COCO, MPII, LSPET], MuCo, H36M, PROX
+8. Mix 8: EFT-[COCO, PT, LSPET], MI, H36M
+9. Mix 9: EFT-[COCO, PT, LSPET, OCH], MI, H36M
+10. Mix 10: PROX, MuCo, EFT-[COCO, PT, LSPET, OCH], UP-3D, MTP, Crowdpose
+11. Mix 11: EFT-[COCO, MPII, LSPET], MuCo, H36M
+
+  Please refer to [mixed-datasets.md](./configs/mixed/README.md) for training configs and results.
+
+- **Benchmarks on different backbones**
 
 Supported backbones:
-
-<details open>
-<summary>(click to collapse)</summary>
-
-- [x] ResNet (CVPR'2016)
+- [x] ResNet-50, -101, -152 (CVPR'2016)
 - [x] ResNeXt (CVPR'2017)
 - [x] HRNet (CVPR'2019)
 - [x] EfficientNet
@@ -90,11 +102,75 @@ Supported backbones:
 - [x] Swin
 - [x] Twins
 
+  <!-- Train with a suite of augmentation techniques for a more robust model -->
+  Please refer to [backbone.md](./configs/backbones/README.md) for training configs and results.
+
+- **Benchmarks on different backbone initialisation**
+
+Supported backbones:
+- [x] ResNet-50, -101, -152 (CVPR'2016)
+- [x] ResNeXt (CVPR'2017)
+- [x] HRNet (CVPR'2019)
+- [x] EfficientNet
+- [x] ViT
+- [x] Swin
+- [x] Twins
+
+  <!-- Train with a suite of augmentation techniques for a more robust model -->
+  Please refer to [backbone.md](./configs/backbones/README.md) for training configs and results.
+
+
+- **Benchmarks on different augmentation techniques**
+
+We find that transfering knowledge from a pose estimation model gives more competitive performance.
+
+Initialised backbones:
+1. ResNet-50 ImageNet (default)
+2. ResNet-50 MPII
+3. ResNet-50 COCO
+4. HRNet-W32 ImageNet
+5. HRNet-W32 MPII
+6. HRNet-W32 COCO
+7. Twins-SVT ImageNet
+8. Twins-SVT MPII
+9. Twins-SVT COCO
+
+  <!-- Train with a suite of augmentation techniques for a more robust model -->
+  Please refer to [augmentation.md](./configs/pretrained-backbones/README.md) for training configs and results.
+
+- **Benchmarks on different losses**
+
+We find that training with L1 loss gives more competitive performance. Please refer to [mixed-datasets-l1.md](./configs/mixed-l1/README.md) for training configs and results.
+
+- **Provide trained models for optimal configurations**
+
+We find that training with L1 loss gives more competitive performance. Please refer to [mixed-datasets-l1.md](./configs/mixed-l1/README.md) for training configs and results.
+
+
+- **Evaluation for different benchmarks**
+
+<!-- Easily obtain benchmarks on their trained model on five test sets (1) 3DPW-test (2) H36M (P1/ P2) test (3) EFT-OCHuman-test (4)  EFT-COCO-Val (5) EFT-LSPET-test -->
+Test sets for evaluation:
+- 3DPW-test (P2)
+- H36m-test (P2)
+- EFT-COCO-val
+- EFT-LSPET-test
+- EFT-OCHuman-test
+
+- **FLOPs and Param evaluation for trained model**
+
+  Evaluate flops and params for trained model
+<!--
+- **Provide training log and model pths for inference**
+
+  Will add links to Gdrive -->
+
+
 ## Installation
 
 General set-up instructions follow that of [MMHuman3d](https://openmmlab.com/mmhuman3d). Please refer to [install.md](./install.md) for installation.
 
-## Data Preparation
+<!-- ## Data Preparation
 
 Please refer to [data_preparation.md](./preprocess_dataset.md) for data preparation.
 
@@ -126,7 +202,7 @@ mmhuman3d
             ├── SMPL_FEMALE.pkl
             ├── SMPL_MALE.pkl
             └── SMPL_NEUTRAL.pkl
-```
+``` -->
 
 ## Train
 
@@ -192,7 +268,7 @@ Example:
 ```
 
 
-## FLOPs Calculation
+## FLOPs
 
 `tools/get_flops.py` is a script adapted from [flops-counter.pytorch](https://github.com/sovrasov/flops-counter.pytorch) and [MMDetection](https://github.com/open-mmlab/mmdetection) to compute the FLOPs and params of a given model.
 
