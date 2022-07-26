@@ -38,6 +38,9 @@ We have added multiple major features on top of MMHuman3D.
 - **Evaluation on 5 test sets**
 - **FLOPs calculation**
 
+Additional:
+- Train annotation files for 31 datasets will be provided in the future
+- Future works can easily obtain benchmarks on HMR for baseline comparison on their selected dataset mixes and partition using our provided pipeline and annotation files.
 
 <!-- #### [Single-datasets](#single-datasets) | [Mixed--datasets](#installation) | [Train](#train) | [Evaluation](#evaluation) | [FLOPs](#flops) | -->
 
