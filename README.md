@@ -6,7 +6,7 @@
 ### [Installation](#installation) | [Train](#train) | [Evaluation](#evaluation) | [FLOPs](#flops) |
 
 ## Experiments
-### [Single-datasets](#single-datasets) | [Mixed-datasets](#mixed-datasets) | [Augmentations](#augmentations) | [Backbones](#backbones) | [Losses](#losses) | [Backbone-initialisation](#backbone-initialisation) | [Downloads](#downloads) |
+### [Single-datasets](#single-datasets) | [Mixed-datasets](#mixed-datasets) | [Augmentations](#augmentations) | [Backbones](#backbones) | [Losses](#losses) | [Backbone-initialisation](#backbone-initialisation) | [Algorithms](#algorithms) | [Downloads](#downloads) |
 
 </div>
 
@@ -203,6 +203,19 @@ We provide trained models from the optimal configurations for download and infer
 | H36M, MI, EFT-COCO  | Twins-SVT | 48.27 | [model](https://drive.google.com/file/d/1hnk8cMQ2QbA1jrZyHaRqqAN1jXdBo7ed/view?usp=sharing) |
 | H36M, MuCo, EFT-COCO  | Twins-SVT | 47.92 | [model](https://drive.google.com/file/d/1ifPYeQY8w-uJzl6yFejaTy_O86OmrjNH/view?usp=sharing) |
 
+
+### Algorithms
+
+We benchmarked our major findings on several algorithms and hope to add more in the future. Please refer to [algorithms.md](./configs/algorithms/README.md) for training configs and logs.
+<details open>
+<summary>(click to collapse)</summary>
+
+1. SPIN
+2. GraphCMR
+3. PARE
+4. Mesh Graphormer
+
+</details>
 
 <!--
 - **Evaluation for different benchmarks**
