@@ -36,7 +36,7 @@ We evaluate on 3DPW. Values are PA-MPJPE.
 
 Our baseline models for HMR, SPIN and GraphCMR can reach the reported results in the respective works. For PARE, the original work trains the model on MPII for pose estimation task and later on EFT-COCO for mesh recovery before training on he full set of datasets. To keep consistent with the practice adopted throughout our work, we benchmark PARE by training it fro scratch with only ImageNet initialisation. For Graphormer, the original work evaluates on H36M every epoch before fine-tuning the best H36M model on 3DPW-train (Protocol 1) for 5 epochs. To keep consistent, we adopt Protocol 2 instead. 
 
-
+This is a summary of our results:
 | Algorithms | Datasets   | Backbone | Initialisation | Normal | L1 | L1+COCO | L1+COCO+Aug |
 |:------:|:-------:|:------:|:-------:|:------:|:------:|:-------:|:------:|
 | HMR | H36M, MI, COCO, LSP, LSPET, MPII | ResNet-50 | ImageNet | 64.55 | 58.20 | 51.80 | 51.66 |
@@ -45,6 +45,7 @@ Our baseline models for HMR, SPIN and GraphCMR can reach the reported results in
 | PARE | H36M, MI, EFT-[COCO, LSPET, MPII] | HRNet-W32 | ImageNet | 61.99 | 61.13 | 59.98 | 58.32 |
 | Graphormer | H36M, MuCo, COCO, UP3D, MPII | HRNet-W48 | ImageNet | 63.18 | 63.47 | 59.66 | 58.82 |
 
+These are the provided logs:
 | Config | Datasets   | Backbone |  Variant | 3DPW    | Log |
 |:------:|:-------:|:------:|:-------:|:------:|:------:|
 | HMR | H36M, MI, COCO, LSP, LSPET, MPII | ResNet-50 | Normal | 64.55| [log](https://drive.google.com/file/d/1AG7XZltGzx1dEQZvk59mx3fL-SWsNPyR/view?usp=sharing) |
