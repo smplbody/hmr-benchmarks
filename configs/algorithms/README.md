@@ -47,7 +47,6 @@ Our baseline models for HMR, SPIN and GraphCMR can reach the reported results in
 
 | Config | Datasets   | Backbone |  Variant | 3DPW    | Log |
 |:------:|:-------:|:------:|:-------:|:------:|:------:|
-<!-- | [resnet50_hmr_mix1.py](resnet50_hmr_mix1_coco_l1.py) | H36M, MI, COCO, LSP, LSPET, MPII | ResNet-50 | Normal | 64.55 | [log](https://drive.google.com/file/d/1ifPYeQY8w-uJzl6yFejaTy_O86OmrjNH/view?usp=sharing) | -->
 | HMR | H36M, MI, COCO, LSP, LSPET, MPII | ResNet-50 | Normal | 64.55| [log](https://drive.google.com/file/d/1AG7XZltGzx1dEQZvk59mx3fL-SWsNPyR/view?usp=sharing) |
 | HMR | H36M, MI, COCO, LSP, LSPET, MPII | ResNet-50 | L1 | 58.20 | [log](https://drive.google.com/file/d/1rnsOXVL7rBx10NV3nt0tim5OHYav1iUi/view?usp=sharing) |
 | HMR | H36M, MI, COCO, LSP, LSPET, MPII | ResNet-50 | L1 + COCO | 51.8 | [log](https://drive.google.com/file/d/1Bo1kSU6WEE3nJxOvVwmwuQJi4bigzv22/view?usp=sharing) |
