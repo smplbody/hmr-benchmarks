@@ -56,7 +56,7 @@ Our baseline models for HMR, SPIN and GraphCMR can reach the reported results in
 | SPIN | H36M, MI, COCO, LSP, LSPET, MPII | ResNet-50 | L1 + COCO | 51.54 | [log](https://drive.google.com/file/d/13su1hD6qEgsIlsLicLul0i9imSenuWER/view?usp=sharing) |
 | SPIN | H36M, MI, COCO, LSP, LSPET, MPII | ResNet-50 | L1 + COCO + Aug | 50.69 | [log](https://drive.google.com/file/d/1vY3_XGaa7p19ttYiSoPtYPSs0waMQnOp/view?usp=sharing) |
 | GraphCMR | H36M, COCO, LSP, LSPET, MPII, UP3D | ResNet-50 | Normal | 70.51 | [log](https://drive.google.com/file/d/1TSpMR4zlGWkksopNNIN20v7Y0YDg4lp1/view?usp=sharing) |
-| GraphCMR | H36M, COCO, LSP, LSPET, MPII, UP3D  ResNet-50 | L1 | 67.2 | [log](https://drive.google.com/file/d/1DrmUF4DK_-G-3wFiWteo16hvwpmYG_Ow/view?usp=sharing) |
+| GraphCMR | H36M, COCO, LSP, LSPET, MPII, UP3D | ResNet-50 | L1 | 67.2 | [log](https://drive.google.com/file/d/1DrmUF4DK_-G-3wFiWteo16hvwpmYG_Ow/view?usp=sharing) |
 | GraphCMR | H36M, COCO, LSP, LSPET, MPII, UP3D | ResNet-50 | L1 + COCO | 61.74 | [log](https://drive.google.com/file/d/1DrmUF4DK_-G-3wFiWteo16hvwpmYG_Ow/view?usp=sharing) |
 | GraphCMR | H36M, COCO, LSP, LSPET, MPII, UP3D | ResNet-50 | L1 + COCO + Aug | 60.26 | [log](https://drive.google.com/file/d/1P6gvswzZ2VNfPP29J1QIl3WVhaGT4ASB/view?usp=sharing) |
 | PARE | H36M, MI, EFT-[COCO, LSPET, MPII] | HRNet-W32 | Normal | 61.99 | [log](https://drive.google.com/file/d/1MEG7FjIeGc_gXNnPBL0sqhptH13S10zH/view?usp=sharing) |
