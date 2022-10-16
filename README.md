@@ -2,6 +2,23 @@
 
 # Benchmarking 3D Pose and Shape Estimation Beyond Algorithms
 
+<div>
+    <a href='' target='_blank'>Hui En Pang</a>&emsp;
+    <a href='https://caizhongang.github.io/' target='_blank'>Zhongang Cai</a>&emsp;
+    <a href='https://yanglei.me/' target='_blank'>Lei Yang</a>&emsp;
+    <a href='https://scholar.google.com/citations?user=9vpiYDIAAAAJ&hl=en' target='_blank'>Tianwei Zhang</a>&emsp;
+    <a href='https://liuziwei7.github.io/' target='_blank'>Ziwei Liu</a><sup>*</sup>
+</div>
+<div>
+    S-Lab, Nanyang Technological University&emsp; <sup>*</sup>corresponding author
+</div>
+
+
+<h4 align="center">
+  <a href="https://arxiv.org/abs/2209.10529" target='_blank'>[arXiv]</a> •
+  <a href="" target='_blank'>[Slides]</a>
+</h4>
+
 ## Getting started
 ### [Installation](#installation) | [Train](#train) | [Evaluation](#evaluation) | [FLOPs](#flops) |
 
@@ -370,3 +387,23 @@ Params: 37.74 M
 1. FLOPs are related to the input shape while parameters are not. The default
  input shape is (1, 3, 224, 224).
 2. Some operators are not counted into FLOPs like GN and custom operators. Refer to [`mmcv.cnn.get_model_complexity_info()`](https://github.com/open-mmlab/mmcv/blob/master/mmcv/cnn/utils/flops_counter.py) for details.
+
+
+## Citation
+If you find our work useful for your research, please consider citing the paper:
+```
+@article{
+  title={Benchmarking and Analyzing 3D Human Pose and Shape Estimation Beyond Algorithms},
+  author={Pang, Hui En and Cai, Zhongang and Yang, Lei and Zhang, Tianwei and Liu, Ziwei},
+  journal={arXiv preprint arXiv:2209.10529},
+  year={2022}
+}
+```
+
+## License
+
+Distributed under the S-Lab License. See `LICENSE` for more information.
+
+## Acknowledgements
+
+This study is supported by NTU NAP, MOE AcRF Tier 2 (T2EP20221-0033), and under the RIE2020 Industry Alignment Fund – Industry Collaboration Projects (IAF-ICP) Funding Initiative, as well as cash and in-kind contribution from the industry partner(s).
