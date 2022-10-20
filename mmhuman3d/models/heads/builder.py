@@ -12,7 +12,7 @@ HEADS = Registry('heads')
 HEADS.register_module(name='HybrIKHead', module=HybrIKHead)
 HEADS.register_module(name='HMRHead', module=HMRHead)
 HEADS.register_module(name='PareHead', module=PareHead)
-HEADS.register_module(name='HMRHrNetHead', module=PareHead)
+HEADS.register_module(name='HMRHrNetHead', module=HMRHrNetHead)
 
 
 def build_head(cfg):
