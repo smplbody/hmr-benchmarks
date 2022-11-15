@@ -215,10 +215,10 @@ We provide trained models from the optimal configurations for download and infer
 | H36M, MI, COCO, LSP, LSPET, MPII | Twins-SVT | 48.77 | [model](https://drive.google.com/file/d/1UOLovoUUCvwXE14yoaJO9o-vpaeSvMPA/view?usp=sharing) |
 | H36M, MI, COCO, LSP, LSPET, MPII | Twins-SVT | 47.70 | [model](https://drive.google.com/file/d/1zk2JanLjkJ1W0TIAPhUaSZtVB-uayWFi/view?usp=sharing) |
 | EFT-[COCO, LSPET, MPII], H36M, SPIN-MI | HRNet-W32 | 47.68 | [model](https://drive.google.com/file/d/1NkijOkAKeNaDUx5XsF8nhL-MiboIcLRu/view?usp=sharing) |
-| EFT-[COCO, LSPET, MPII], H36M, SPIN-MI  | Twins-SVT | 47.31 | [model](https://drive.google.com/file/d/1ifPYeQY8w-uJzl6yFejaTy_O86OmrjNH/view?usp=sharing) |
+| EFT-[COCO, LSPET, MPII], H36M, SPIN-MI  | Twins-SVT | 47.31 | [model](https://drive.google.com/file/d/1ostUnbf8MIVerlLo0AAP7As4V_gs-41k/view?usp=share_link) |
 | H36M, MI, EFT-COCO | HRNet-W32 | 48.08 | [model](https://drive.google.com/file/d/19poA9gmmuOlMbcREBGRF70EqyM00bDxi/view?usp=sharing) |
 | H36M, MI, EFT-COCO  | Twins-SVT | 48.27 | [model](https://drive.google.com/file/d/1hnk8cMQ2QbA1jrZyHaRqqAN1jXdBo7ed/view?usp=sharing) |
-| H36M, MuCo, EFT-COCO  | Twins-SVT | 47.92 | [model](https://drive.google.com/file/d/1ifPYeQY8w-uJzl6yFejaTy_O86OmrjNH/view?usp=sharing) |
+| H36M, MuCo, EFT-COCO  | Twins-SVT | 47.92 | [model](https://drive.google.com/file/d/1ZQG0LCArhM3k-C1IQ-ZEc3cKAUbH8xFf/view?usp=share_link) |
 
 
 ### Algorithms
