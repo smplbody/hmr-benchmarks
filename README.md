@@ -7,12 +7,13 @@
     <a href='https://caizhongang.github.io/' target='_blank'>Zhongang Cai</a>&emsp;
     <a href='https://yanglei.me/' target='_blank'>Lei Yang</a>&emsp;
     <a href='https://scholar.google.com/citations?user=9vpiYDIAAAAJ&hl=en' target='_blank'>Tianwei Zhang</a>&emsp;
-    <a href='https://liuziwei7.github.io/' target='_blank'>Ziwei Liu</a><sup>*</sup>
+    <a href='https://liuziwei7.github.io/' target='_blank'>Ziwei Liu</a>
 </div>
 <div>
-    S-Lab, Nanyang Technological University&emsp; <sup>*</sup>corresponding author
+    S-Lab, Nanyang Technological University
 </div>
 
+<strong><a href='https://nips.cc/Conferences/2022' target='_blank'>NeurIPS 2022</a></strong>
 
 <h4 align="center">
   <a href="https://arxiv.org/abs/2209.10529" target='_blank'>[arXiv]</a> •
@@ -392,10 +393,10 @@ Params: 37.74 M
 ## Citation
 If you find our work useful for your research, please consider citing the paper:
 ```
-@article{
+@inproceedings{
   title={Benchmarking and Analyzing 3D Human Pose and Shape Estimation Beyond Algorithms},
   author={Pang, Hui En and Cai, Zhongang and Yang, Lei and Zhang, Tianwei and Liu, Ziwei},
-  journal={arXiv preprint arXiv:2209.10529},
+  booktitle={NeurIPS},
   year={2022}
 }
 ```
