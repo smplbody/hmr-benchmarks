@@ -18,6 +18,7 @@
   * [LSP](#lsp)
   * [LSPET](#lspet)
   * [MPI-INF-3DHP](#mpi-inf-3dhp)
+  * [MuCo-3DHP](#muco3dhp)
   * [MPII](#mpii)
   * [PoseTrack18](#posetrack18)
   * [Penn Action](#penn-action)
@@ -982,6 +983,43 @@ mmhuman3d
                 └── Seq2
 ```
 
+
+### MuCo-3DHP
+
+<details>
+<summary align="right"><a href="https://arxiv.org/pdf/1712.03453.pdf">MuCo-3DHP (3DV'2018)</a></summary>
+
+```bibtex
+@inproceedings{singleshotmultiperson2018,
+title = {Single-Shot Multi-Person 3D Pose Estimation From Monocular RGB},
+author = {Mehta, Dushyant and Sotnychenko, Oleksandr and Mueller, Franziska and Xu, Weipeng and Sridhar, Srinath and Pons-Moll, Gerard and Theobalt, Christian},
+booktitle = {3D Vision (3DV), 2018 Sixth International Conference on},
+month = {sep},
+year = {2018},
+organization={IEEE},
+url = {http://gvv.mpi-inf.mpg.de/projects/SingleShotMultiPerson}
+}
+```
+</details>
+
+
+For [MuCo-3DHP](https://vcai.mpi-inf.mpg.de/projects/SingleShotMultiPerson/), download and extract them under `$MMHUMAN3D/data/datasets`, and make them look like this:
+
+```text
+mmhuman3d
+├── mmhuman3d
+├── docs
+├── tests
+├── tools
+├── configs
+└── data
+    └── datasets
+        |── muco
+        |   ├── augmented_set
+        |   └── unaugmented_set
+        └── SMPLX
+            └── smpl_param.json
+```
 
 
 ### MPII

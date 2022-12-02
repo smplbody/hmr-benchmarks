@@ -16,6 +16,7 @@ from .lsp_extended import LspExtendedConverter
 from .mpi_inf_3dhp import MpiInf3dhpConverter
 from .mpi_inf_3dhp_hybrik import MpiInf3dhpHybrIKConverter
 from .mpii import MpiiConverter
+from .muco import Muco3dhpConverter
 from .penn_action import PennActionConverter
 from .posetrack import PosetrackConverter
 from .pw3d import Pw3dConverter
@@ -33,5 +34,6 @@ __all__ = [
     'Pw3dConverter', 'Up3dConverter', 'CrowdposeConverter', 'EftConverter',
     'GTAHumanConverter', 'CocoHybrIKConverter', 'H36mHybrIKConverter',
     'MpiInf3dhpHybrIKConverter', 'Pw3dHybrIKConverter', 'SurrealConverter',
-    'InstaVibeConverter', 'SpinConverter', 'VibeConverter', 'HuMManConverter'
+    'InstaVibeConverter', 'SpinConverter', 'VibeConverter', 'HuMManConverter',
+    'Muco3dhpConverter'
 ]
